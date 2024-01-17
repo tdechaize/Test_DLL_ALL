@@ -8,7 +8,7 @@ You can read (very long story ...) how I can construct these DLL with many free 
 You will can understand how progressly it is possible to integrate all of these compilers into CB to generate many 
 operational DLL on Windows 11 64 bits (Family Edition). 
 
-11 000 lines to understand. Too long, no, it' s necessary to explain in details the generattion by example, illustrated by
+11 000 lines to understand. Too long, no, it' s necessary to explain in details the generation by example, illustrated by
 all results of tests of DLL.
 
 Please, take time to read the final bilan : Bilan_DLL_ALL.txt 
