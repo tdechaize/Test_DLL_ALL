@@ -1,0 +1,95 @@
+ Creating Static and Dynamic Libraries for your C Programs
+#c
+
+G'day world! This is my first post here on dev.to. I'm stoked to be here, and today, I'm going to talk about 
+code reuse in the C/C++ world.
+
+Bill Gates never actually said "Hire the laziest person for the job, because they will find the easiest way 
+to do it", but the sentiment certainly rings true.
+
+If you're a Civil Engineer, you can't reuse a pylon from a previous bridge in a new building, but a Software 
+Engineer can reuse code from a previous project. This is a huge productivity win, and we should be leveraging 
+it as hard as we can.
+
+When dealing with C or C++, there are two general ways of reusing code between projects - static libraries 
+and dynamic libraries.
+Static Libraries
+
+A Static Library is just a series of object files (.o files) that have been archived together. 
+On Windows, you'll see them with .lib extensions, whereas on linux systems they have .a extensions.
+
+For example, let's say we have a project called "Wave" that makes web requests in C. We have two .c files, 
+waveRequest.c and waveResponse.c. In order to create and use a static library, we do the following:
+
+> # Create the object files
+> gcc -c -o waveRequest.o waveRequest.c
+> gcc -c -o waveResponse.o waveResponse.c
+> # Create the Static Libaray
+> ar rcs libWave.a waveRequest.o waveResponse.o
+> # compile your code with the library
+> gcc -o main main.c -lWave # The compiler adds the "lib" and ".a" itself
+
+Now, whenever you want to use your Wave library, you can copy the libWave.a and compile it into your project. 
+This has a few advantages:
+
+    We are reusing code
+    We can write unit tests for our Wave Library and be confident that it will work everywhere
+    If the library gets updates and is not backwards-compatible, the older version is still compiled into your 
+	code
+
+However, there are some disadvantages to using static libraries:
+
+    Copying the .a file around to different projects is kinda clunky and doesn't feel like a nice workflow
+    If the library is updated and you want to move to the new version, you need to recompile your project
+    You might not be using all the functionality of the library, so compiling all of it in with your code could 
+	be a waste of space
+
+So what do we do if we don't want to compile in the static library to our own code?
+Dynamic Libraries
+
+While you have to compile in your static library, the dynamic library is stored in one place and loaded into 
+multiple programs at runtime (think of common C libraries, like stdlib, stdio and assert). 
+They typically have .so file extensions (or .dll in Windows) and don't require any extra compile flags for use.
+
+Using our Wave example, and assuming we have a Wave.h file, you can create a dynamic library as follows:
+
+> # Compile the object files
+> gcc -fPIC -c -o waveRequest.o waveRequest.c
+> gcc -fPIC -c -o waveResponse.o waveResponse.c
+> # Create the dynamic library
+> gcc -shared -o libWave.so waveRequest.o waveResponse.o
+> # Copy the library to where it can be included
+> cp libWave.so /usr/local/lib/libWave.so
+> cp Wave.h /usr/local/include/libWave.h
+
+Now, there's a bit going on here, so let's unpack it. Firstly, we are compiling our object files with the -fPIC 
+flag, which means "Position Independent Code" - this will remove all absolute address references from the code 
+and use relative addresses instead, allowing us to reuse the code across multiple projects without having to 
+recompile it.
+
+We are also copying our library and header files to a place where the compiler knows to look for library and 
+header files. This might be different on your machine, for info on osx, look here and for linux you can use ldconf.
+
+We can use our wave library in code as follows:
+
+#include <Wave.h>
+
+int main(int argc, char* argv) {
+    wave_make_request("https://dev.to");
+    return 0;
+}
+
+Now that we are using the dynamic library, we get the following benefits:
+
+    Whenever our library is upgraded, we automatically get the new version
+    We don't have to copy files between projects
+    We don't have to remember to compile in the library, just include it! But there are some drawbacks too:
+    If updates are made to the library that aren't backwards compatible, you will probably end up with a runtime 
+	error
+    On lower memory machines, paging between the dynamic library and your application code might cause a hit to 
+	your app's performance.
+
+So there's my summary of static and dynamic libraries! Hopefully you found this useful, and we can all continue 
+to be lazy.
+
+Cheers

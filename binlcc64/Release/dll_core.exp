@@ -1,0 +1,13 @@
+dll_core.dll
+Adddbl		Adddbl
+Addint		Addint
+Divdbl		Divdbl
+Divint		Divint
+Hello		Hello
+LibMain		LibMain
+Multdbl		Multdbl
+Multint		Multint
+Squardbl		Squardbl
+Squarint		Squarint
+Subdbl		Subdbl
+Subint		Subint

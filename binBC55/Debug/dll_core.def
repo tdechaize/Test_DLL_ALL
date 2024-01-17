@@ -1,0 +1,28 @@
+LIBRARY     DLL_CORE.DLL
+
+EXPORTS
+    Adddbl                         @21  ; Adddbl
+    Addint                         @15  ; Addint
+    Divdbl                         @24  ; Divdbl
+    Divint                         @19  ; Divint
+    DllEntryPoint                  @1   ; DllEntryPoint
+    DllMain                        @13  ; DllMain
+    Hello                          @16  ; Hello
+    Multdbl                        @23  ; Multdbl
+    Multint                        @18  ; Multint
+    Squardbl                       @25  ; Squardbl
+    Squarint                       @20  ; Squarint
+    Subdbl                         @22  ; Subdbl
+    Subint                         @17  ; Subint
+    _Adddbl                        @8   ; _Adddbl
+    _Addint                        @3   ; _Addint
+    _Divdbl                        @11  ; _Divdbl
+    _Divint                        @6   ; _Divint
+    _DllMain                       @14  ; _DllMain
+    _Hello                         @2   ; _Hello
+    _Multdbl                       @10  ; _Multdbl
+    _Multint                       @5   ; _Multint
+    _Squardbl                      @12  ; _Squardbl
+    _Squarint                      @7   ; _Squarint
+    _Subdbl                        @9   ; _Subdbl
+    _Subint                        @4   ; _Subint

@@ -1,0 +1,290 @@
+Easily Create Shared Libraries with CMake (Part 1)
+Alexander Shaduri's photo
+Alexander Shaduri
+·
+Jan 27, 2021
+·
+
+13 min read
+Introduction
+
+When working on a cross-platform C++ or C project, it is easy to get confused by platform differences and scattered information.
+Writing, compiling, and using shared libraries in a cross-platform manner with a modern build system is one of the most common 
+problems in development.
+
+Unfortunately, practical information about the actual specifics is quite scarce - most of the information is either outdated, 
+scattered, or incomplete.
+
+In this article I describe a simple way to create a shared library in your C++ / CMake project while accounting for platform 
+differences.
+
+I'm also providing a sample project at GitHub which can be used as a starting point or a reference. 
+The sample project has a few features that you may find useful:
+
+    It uses modern CMake.
+    It supports compiling the library either as static or shared.
+    It provides cross-platform macros for exporting library symbols, supporting Windows and Linux.
+
+The project can be found at GitHub: %[github.com/ashaduri/demo-library-simple]
+Libraries - A Quick Refresher
+
+A library can be either static or shared.¹
+
+    A static library can be thought of as an archive of object files. There isn't a big difference between directly linking all 
+	the object files together, and grouping them into several static libraries, linking them into a final executable afterwards.²
+    During the final stages of building the project, static libraries are linked into the executable files (binaries / .exe files, 
+	or even shared libraries / .dll files). Therefore, the compiled machine code is readily available as part of the executable 
+	files.
+    It is not recommended to distribute static libraries because they may be dependent on specific compiler versions.
+    Static library files usually have .lib (Windows) or .a (Linux, MinGW) extensions.³
+
+    A shared (also known as dynamic, dynamically-linked, dynamic-link) library is a file that is searched for and loaded by your 
+	operating system's dynamic linker when you run your executable. One of the advantages of shared libraries is reduced memory 
+	and disk consumption - if multiple executables use the same shared library, only one copy has to exist on the disk and be 
+	loaded into system memory.
+    Shared library files usually have .dll (Windows), .so (Linux), or .dylib (macOS) extensions.
+
+¹: For sake of simplicity, in this article I am not covering C++20 modules, link-time optimization, or import libraries.
+
+²: In reality, unless used, global symbols in static libraries may be optimized out by the linker. This may cause problems, 
+for example, when Windows resource files are compiled into static libraries.
+
+³: .lib extension is also used for .dll companion files called "import libraries" on Windows, used during the linking stage of 
+project build.
+Default Visibility of Symbols
+
+There are a few facilities in C++ to control the visibility of symbols (functions, global variables) between object files. 
+For example, by placing a function into anonymous namespace, you get a guarantee that the function is only visible in the object 
+file it's compiled to, and does not cause conflicts with other, similarly-named functions in other object files.
+
+A symbol in a static library is visible just like any other symbol in your object files - there is usually no need to modify your 
+code.
+
+However, using symbols from shared libraries is a bit more complicated. As of C++20, Standard C++ does not (yet) have a facility 
+to control visibility of shared library symbols across the library boundary. This is where the platform- and compiler-specific 
+behavior occurs:
+
+    Visual C++ treats all symbols inside a shared library as private by default - you cannot use or call them from outside code.
+
+    GCC, Clang, MinGW and many other GCC-like compilers treat all symbols as public by default. While this may be very convenient 
+	because libraries can be made shared with minimal changes, it also makes the libraries "leak" their private symbols to outside 
+	world, which may cause hard-to-diagnose conflicts.⁴
+
+Fortunately, it is easy to make GCC / Clang behave like Visual C++ by simply adding -fvisibility=hidden option during library 
+compilation.
+
+⁴ Treating all symbols as private by default can also help wrap a symbol-leaking C code in a library with safe public interface, 
+avoiding potential symbol conflicts.
+CMake Support for Setting Symbol Visibility
+
+If using CMake, you don't have to use the visibility compiler option. Instead, simply set the propertiesC_VISIBILITY_PRESET and 
+CXX_VISIBILITY_PRESET (for C and C++, respectively) to hidden on your library target (called foo_library here):
+
+    set_target_properties(foo_library
+        PROPERTIES
+            C_VISIBILITY_PRESET hidden
+            CXX_VISIBILITY_PRESET hidden
+    )
+
+Exporting and Importing Symbols
+
+Since all library symbols should be private by default, a symbol has to be marked as public / exported for it to be visible form 
+outside the shared library. This is achieved by marking the symbol with a special attribute:
+
+    __declspec(dllexport) is used on Windows (including GCC / MinGW)
+    __attribute__((visibility("default"))) is used on most other operating systems with GCC-like compilers.
+
+Additionally, on Windows, the outside code that uses these exported symbols has to "import" them from the shared library. 
+When using these symbols, they have to be marked as "imported":
+
+    __declspec(dllimport)
+
+This code illustrates a function declaration which has to be exported from a shared library on Windows:
+
+// When *building* the shared library,
+// function declarations have to be written this way:
+__declspec(dllexport) void myPublicFunction();
+
+// When *using* the shared library from outside
+// (by including its header files),
+// function declarations have to be written this way:
+__declspec(dllimport) void myPublicFunction();
+
+Obviously, it is impractical to have two header files - one with symbols marked as "exported" and one with the same symbols 
+marked as "imported". A common workaround is to create a macro that abstracts the import / export attributes. 
+Assuming our library is named "foo_library", let's call this macro FOO_LIBRARY_BUILD. Depending on whether FOO_LIBRARY_BUILD 
+is defined or not, the new FOO_LIBRARY_EXPORT macro changes its value to either export or import the symbol:
+
+#ifdef FOO_LIBRARY_BUILD
+    // Building the library
+    #ifdef _WIN32
+        // Use the Windows-specific export attribute
+        #define FOO_LIBRARY_EXPORT __declspec(dllexport)
+    #elif __GNUC__ >= 4
+        // Use the GCC-specific export attribute
+        #define FOO_LIBRARY_EXPORT __attribute__((visibility("default")))
+    #else
+        // Assume that no export attributes are needed
+        #define FOO_LIBRARY_EXPORT
+    #endif
+#else
+    // Using (including) the library
+    #ifdef _WIN32
+        // Use the Windows-specific import attribute
+        #define FOO_LIBRARY_EXPORT __declspec(dllimport)
+    #else
+        // Assume that no import attributes are needed
+        #define FOO_LIBRARY_EXPORT
+    #endif
+#endif
+
+Now that we have defined the helper macro, we can easily mark our public symbols with it. For example, the library header 
+file could contain the following declarations:
+
+// Automatically export or import a symbol depending
+// on whether FOO_LIBRARY_BUILD is defined or not.
+
+// Make the function available to outside code
+FOO_LIBRARY_EXPORT void myPublicFunction();
+
+// Make the members of the struct available to outside code
+struct FOO_LIBRARY_EXPORT MyStruct {
+    // member function and data member declarations...
+};
+
+The code can be easily modified to define FOO_LIBRARY_EXPORT to nothing if static library compilation is required. 
+Our "demo-library-simple" project contains all the necessary enhancements to support both static and shared compilation.
+Using CMake to Handle FOO_LIBRARY_BUILD
+
+In CMake, it is easy to define our FOO_LIBRARY_BUILD macro only when building the library:
+
+target_compile_definitions(foo_library
+    PRIVATE
+        FOO_LIBRARY_BUILD
+)
+
+The PRIVATE nature of this definition tells CMake to define this macro only when building the library itself, but not 
+when other CMake targets use this library.
+CMake Support
+
+Now that we have the C/C++ code support, we can write the remainder of our CMake code. The GitHub sample project contains 
+support for compiling the same library either as static or shared, but for the sake of simplicity I describe only the 
+shared part here.
+
+Creating the Library Target
+
+Assuming our library source and header files are in "foo_library" subdirectory of our project, we start by declaring the 
+foo_library CMake target in foo_library/CMakeLists.txt:
+
+# List all library sources
+set(FOO_LIBRARY_SOURCES
+    foo_library.h
+    foo_library.cpp
+)
+
+# Add a shared library target
+add_library(foo_library SHARED ${FOO_LIBRARY_SOURCES})
+
+# Make all non-exported symbols hidden by default
+set_target_properties(foo_library
+    PROPERTIES
+        CXX_VISIBILITY_PRESET hidden
+)
+
+# Treat the public symbols as exported
+# (and not imported) by defining FOO_LIBRARY_BUILD
+# when building the library.
+target_compile_definitions(foo_library
+    PRIVATE
+        FOO_LIBRARY_BUILD
+)
+
+# Export the library's public header path to dependent targets
+target_include_directories(foo_library
+    INTERFACE
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+Now that we have the shared library compilation down, we can create an executable target (let's call it "demo") and link 
+our library with it:
+
+# List all sources of the executable
+set(DEMO_SOURCES
+    demo.cpp
+)
+
+# Create a CMake target for the executable 
+add_executable(demo ${DEMO_SOURCES})
+
+# Link the library with the executable
+target_link_libraries(demo
+    PRIVATE
+        foo_library
+)
+
+It is important to keep in mind that "link" in CMake's target_link_libraries() is not linking in the classical sense. 
+Apart from the actual linking via linker, it also makes the new target inherit all the PUBLIC and INTERFACE properties of the 
+library.
+What's Next
+
+In the next part of the article series I will talk about generalizing the export macro to handle multiple libraries, making 
+sure the executables can find the libraries, setting RPATH, and much more.
+Notes on Versions
+
+This article assumes to the following versions of software:
+
+    CMake 3.0 or later (tested with CMake 3.19).
+    Visual Studio 2008 or later (tested with Visual Studio 2019).
+    GCC 4.0 or later (tested with GCC 11).
+
+Useful Links
+
+Please check out the links below for more detailed information on the topics discussed above.
+
+    Code from the Article: demo-library-simple
+
+    GCC: Visibility
+
+    MSDN: Importing and Exporting
+
+    CMake: add_library
+
+    CMake: target_link_libraries
+
+Copyright © 2021 Alexander Shaduri
+Subscribe to my newsletter
+
+Read articles from Alexander's Programming Tips directly inside your inbox. Subscribe to the newsletter, and don't miss out.
+C++
+library
+Libraries
+Written by
+Alexander Shaduri
+Alexander Shaduri
+
+I'm a professional C++ software developer since 2002. While I strongly believe in using the right tool for the job, I'm also 
+an avid fan of safe, reliable and efficient programming, so safe C++ and Rust code is where my interests are focused.
+ Most of my software is cross-platform, but I mainly use Linux as my desktop and development platform.
+ 
+More articles
+Alexander Shaduri's photo
+Alexander Shaduri
+Writing a Compile-Time CSV Parser in C++, Part 2: The Parser
+
+Introduction In part 1 of this article I described the constexpr feature, a C++ facility to perform …
+Alexander Shaduri's photo
+Alexander Shaduri
+Writing a Compile-Time CSV Parser in C++, Part 1: Constexpr Overview
+
+Introduction In part 1 of the article I discuss the constexpr feature as it's specified in C++17 and…
+
+©2024 Alexander's Programming Tips
+Archive
+·
+Privacy policy
+·
+Terms
+Publish with Hashnode
+
+Powered by Hashnode - Home for tech writers and readers
+

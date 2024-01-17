@@ -1,0 +1,2072 @@
+<html>
+<head>
+<title>BUILD_DLL build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>17-01-2024 at 16:04.31</u><br />
+Build ended on: <u>17-01-2024 at 16:05.43</u><p />
+<b>-------------- Build: Debug Mingw32 official in BUILD_DLL (compiler: GNU GCC Compiler)---------------</b><br />
+cmd /c echo.  *********  Quelques caracteristiques du systeme hebergeant l'environnement de developpement.   ***********<br />
+  *********  Quelques caracteristiques du systeme hebergeant l'environnement de developpement.   ***********<br />
+cmd /c WMIC OS GET Name<br />
+Name                                                                  <br />
+Microsoft Windows 11 Famille|C:\WINDOWS|\Device\Harddisk1\Partition3  <br />
+cmd /c WMIC OS GET Version<br />
+Version     <br />
+10.0.22631  <br />
+cmd /c WMIC OS GET OSArchitecture<br />
+OSArchitecture  <br />
+64-bit          <br />
+gcc --version<br />
+gcc (MinGW.org GCC Build-2) 9.2.0<br />
+Copyright (C) 2019 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN32 -m32 -IC:\MingW\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMingW32of\Debug\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMingW32of\Debug\libdll_core.def -Wl,--out-implib=binMingW32of\Debug\libdll_core.a -Wl,--dll -LC:\MingW\lib objMingW32of\Debug\src\dll_core.o  -o binMingW32of\Debug\dll_core.dll -m32<br />
+Output file is binMingW32of\Debug\dll_core.dll with size 37.16 KB<br />
+cmd /c type binMingW32of\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release Mingw32 official in BUILD_DLL (compiler: GNU GCC Compiler)---------------</b><br />
+gcc --version<br />
+gcc (MinGW.org GCC Build-2) 9.2.0<br />
+Copyright (C) 2019 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -O2 -DNDEBUG -DBUILD_DLL -D_WIN32 -m32 -IC:\MingW\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMingW32of\Release\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMingW32of\Release\libdll_core.def -Wl,--out-implib=binMingW32of\Release\libdll_core.a -Wl,--dll -LC:\MingW\lib objMingW32of\Release\src\dll_core.o  -o binMingW32of\Release\dll_core.dll -s -m32<br />
+Output file is binMingW32of\Release\dll_core.dll with size 11.00 KB<br />
+cmd /c type binMingW32of\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug Mingw64 CB in BUILD_DLL (compiler: GNU GCC Compiler CB)---------------</b><br />
+gcc --version<br />
+gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders) 13.1.0<br />
+Copyright (C) 2023 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -g -march=core2 -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN64 -m64 -IC:\CodeBlocks\MinGW\x86_64-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMingw64CB\Debug\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMingw64CB\Debug\libdll_core.def -Wl,--out-implib=binMingw64CB\Debug\libdll_core.a -Wl,--dll -LC:\CodeBlocks\MinGW\x86_64-w64-mingw32\lib objMingw64CB\Debug\src\dll_core.o  -o binMingw64CB\Debug\dll_core.dll -m64  -lkernel32 -luser32<br />
+Output file is binMingw64CB\Debug\dll_core.dll with size 52.77 KB<br />
+cmd /c type binMingw64CB\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release Mingw64 CB in BUILD_DLL (compiler: GNU GCC Compiler CB)---------------</b><br />
+gcc --version<br />
+gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders) 13.1.0<br />
+Copyright (C) 2023 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -O2 -DNDEBUG -DBUILD_DLL -D_WIN64 -m64 -IC:\CodeBlocks\MinGW\x86_64-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMingw64CB\Release\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMingw64CB\Release\libdll_core.def -Wl,--out-implib=binMingw64CB\Release\libdll_core.a -Wl,--dll -LC:\CodeBlocks\MinGW\x86_64-w64-mingw32\lib objMingw64CB\Release\src\dll_core.o  -o binMingw64CB\Release\dll_core.dll -s -m64  -lkernel32 -luser32<br />
+Output file is binMingw64CB\Release\dll_core.dll with size 19.00 KB<br />
+cmd /c type binMingw64CB\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug Mingw64 Dev-Cpp in BUILD_DLL (compiler: GNU GCC Compiler DEV)---------------</b><br />
+gcc --version<br />
+gcc (x86_64-posix-seh-rev1, Built by MinGW-W64 project) 11.2.0<br />
+Copyright (C) 2021 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN64 -m64 -IC:\RedPanda-Cpp\MinGW64\x86_64-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objDevCpp\Debug\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binDevCpp\Debug\libdll_core.def -Wl,--out-implib=binDevCpp\Debug\libdll_core.a -Wl,--dll -LC:\RedPanda-Cpp\MinGW64\x86_64-w64-mingw32\lib -LC:\RedPanda-Cpp\MinGW64\lib objDevCpp\Debug\src\dll_core.o  -o binDevCpp\Debug\dll_core.dll -m64  -lkernel32 -luser32<br />
+Output file is binDevCpp\Debug\dll_core.dll with size 69.94 KB<br />
+cmd /c type binDevCpp\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release Mingw64 Dev-Cpp in BUILD_DLL (compiler: GNU GCC Compiler DEV)---------------</b><br />
+gcc --version<br />
+gcc (x86_64-posix-seh-rev1, Built by MinGW-W64 project) 11.2.0<br />
+Copyright (C) 2021 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -O2 -DNDEBUG -DBUILD_DLL -D_WIN64 -m64 -IC:\RedPanda-Cpp\MinGW64\x86_64-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objDevCpp\Release\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binDevCpp\Release\libdll_core.def -Wl,--out-implib=binDevCpp\Release\libdll_core.a -Wl,--dll -LC:\RedPanda-Cpp\MinGW64\x86_64-w64-mingw32\lib -LC:\RedPanda-Cpp\MinGW64\lib objDevCpp\Release\src\dll_core.o  -o binDevCpp\Release\dll_core.dll -s -m64  -lkernel32 -luser32<br />
+Output file is binDevCpp\Release\dll_core.dll with size 36.00 KB<br />
+cmd /c type binDevCpp\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug CYGWIN 32 in BUILD_DLL (compiler: Cygwin GCC 32)---------------</b><br />
+i686-w64-mingw32-gcc.exe --version<br />
+i686-w64-mingw32-gcc (GCC) 11.4.0<br />
+Copyright (C) 2021 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+i686-w64-mingw32-gcc.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN32 -m32 -D_WIN32 -IC:/cygwin64/usr/i686-w64-mingw32/sys-root/mingw/include -c C:/src/TestDLL_ALL/src/dll_core.c -o objCYGWIN32/Debug/src/dll_core.o<br />
+i686-w64-mingw32-gcc.exe -shared -Wl,--output-def=binCYGWIN32/Debug/libdll_core.def -Wl,--out-implib=binCYGWIN32/Debug/libdll_core.a -Wl,--dll -LC:/cygwin64/usr/i686-w64-mingw32/sys-root/mingw/lib objCYGWIN32/Debug/src/dll_core.o  -o binCYGWIN32/Debug/dll_core.dll -mwindows -Wl,--export-all-symbols -Wl,--enable-auto-import -m32  -lkernel32 -luser32<br />
+Output file is binCYGWIN32\Debug\dll_core.dll with size 216.49 KB<br />
+cmd /c type binCYGWIN32\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release CYGWIN 32 in BUILD_DLL (compiler: Cygwin GCC 32)---------------</b><br />
+i686-w64-mingw32-gcc.exe --version<br />
+i686-w64-mingw32-gcc (GCC) 11.4.0<br />
+Copyright (C) 2021 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+i686-w64-mingw32-gcc.exe -DNDEBUG -DBUILD_DLL -D_WIN32 -m32 -D_WIN32 -IC:/cygwin64/usr/i686-w64-mingw32/sys-root/mingw/include -c C:/src/TestDLL_ALL/src/dll_core.c -o objCYGWIN32/Release/src/dll_core.o<br />
+i686-w64-mingw32-gcc.exe -shared -Wl,--output-def=binCYGWIN32/Release/libdll_core.def -Wl,--out-implib=binCYGWIN32/Release/libdll_core.a -Wl,--dll -LC:/cygwin64/usr/i686-w64-mingw32/sys-root/mingw/lib objCYGWIN32/Release/src/dll_core.o  -o binCYGWIN32/Release/dll_core.dll -mwindows -m32  -lkernel32 -luser32<br />
+Output file is binCYGWIN32\Release\dll_core.dll with size 213.28 KB<br />
+cmd /c type binCYGWIN32\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug CYGWIN 64 in BUILD_DLL (compiler: Cygwin GCC 64)---------------</b><br />
+x86_64-w64-mingw32-gcc.exe --version<br />
+x86_64-w64-mingw32-gcc (GCC) 11.4.0<br />
+Copyright (C) 2021 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+x86_64-w64-mingw32-gcc.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN64 -m64 -D_WIN64 -IC:/cygwin64/usr/x86_64-w64-mingw32/sys-root/mingw/include -c C:/src/TestDLL_ALL/src/dll_core.c -o objCYGWIN64/Debug/src/dll_core.o<br />
+x86_64-w64-mingw32-gcc.exe -shared -Wl,--output-def=binCYGWIN64/Debug/libdll_core.def -Wl,--out-implib=binCYGWIN64/Debug/libdll_core.a -Wl,--dll -LC:/cygwin64/usr/x86_64-w64-mingw32/sys-root/mingw/lib objCYGWIN64/Debug/src/dll_core.o  -o binCYGWIN64/Debug/dll_core.dll -mwindows -m64  -lkernel32 -luser32<br />
+Output file is binCYGWIN64\Debug\dll_core.dll with size 228.09 KB<br />
+cmd /c type binCYGWIN64\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release CYGWIN 64 in BUILD_DLL (compiler: Cygwin GCC 64)---------------</b><br />
+x86_64-w64-mingw32-gcc.exe --version<br />
+x86_64-w64-mingw32-gcc (GCC) 11.4.0<br />
+Copyright (C) 2021 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+x86_64-w64-mingw32-gcc.exe -DNDEBUG -DBUILD_DLL -D_WIN64 -m64 -D_WIN64 -IC:/cygwin64/usr/x86_64-w64-mingw32/sys-root/mingw/include -c C:/src/TestDLL_ALL/src/dll_core.c -o objCYGWIN64/Release/src/dll_core.o<br />
+x86_64-w64-mingw32-gcc.exe -shared -Wl,--output-def=binCYGWIN64/Release/libdll_core.def -Wl,--out-implib=binCYGWIN64/Release/libdll_core.a -Wl,--dll -LC:/cygwin64/usr/x86_64-w64-mingw32/sys-root/mingw/lib objCYGWIN64/Release/src/dll_core.o  -o binCYGWIN64/Release/dll_core.dll -mwindows -m64  -lkernel32 -luser32<br />
+Output file is binCYGWIN64\Release\dll_core.dll with size 225.38 KB<br />
+cmd /c type binCYGWIN64\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug Mingw32 wl in BUILD_DLL (compiler: GNU GCC MinGW32 Compiler)---------------</b><br />
+gcc --version<br />
+gcc (MinGW-W64 i686-ucrt-posix-dwarf, built by Brecht Sanders) 13.2.0<br />
+Copyright (C) 2023 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN32 -IC:\mingw32\i686-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMingw32wl\Debug\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMingw32wl\Debug\libdll_core.def -Wl,--out-implib=binMingw32wl\Debug\libdll_core.a -Wl,--dll -LC:\mingw32\i686-w64-mingw32\lib objMingw32wl\Debug\src\dll_core.o  -o binMingw32wl\Debug\dll_core.dll -DBUILD_DLL -D_WIN32  -lkernel32 -luser32<br />
+Output file is binMingw32wl\Debug\dll_core.dll with size 51.51 KB<br />
+cmd /c type binMingw32wl\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release Mingw32 wl in BUILD_DLL (compiler: GNU GCC MinGW32 Compiler)---------------</b><br />
+gcc --version<br />
+gcc (MinGW-W64 i686-ucrt-posix-dwarf, built by Brecht Sanders) 13.2.0<br />
+Copyright (C) 2023 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -DNDEBUG -DBUILD_DLL -D_WIN32 -IC:\mingw32\i686-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMingw32wl\Release\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMingw32wl\Release\libdll_core.def -Wl,--out-implib=binMingw32wl\Release\libdll_core.a -Wl,--dll -LC:\mingw32\i686-w64-mingw32\lib objMingw32wl\Release\src\dll_core.o  -o binMingw32wl\Release\dll_core.dll  -lkernel32 -luser32<br />
+Output file is binMingw32wl\Release\dll_core.dll with size 49.84 KB<br />
+cmd /c type binMingw32wl\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug Mingw64 wl in BUILD_DLL (compiler: GNU GCC MinGW64 Compiler)---------------</b><br />
+gcc --version<br />
+gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders) 13.1.0<br />
+Copyright (C) 2023 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN64 -IC:\mingw64\x86_64-w64-mingw32\include -IC:\mingw-w64\mingw64\include -IC:\CodeBlocks.new\MinGW\include -IC:\CodeBlocks\MinGW\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMingw64wl\Debug\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMingw64wl\Debug\libdll_core.def -Wl,--out-implib=binMingw64wl\Debug\libdll_core.a -Wl,--dll -LC:\mingw64\x86_64-w64-mingw32\lib -LC:\mingw-w64\mingw64\lib -LC:\CodeBlocks.new\MinGW\lib -LC:\CodeBlocks\MinGW\lib objMingw64wl\Debug\src\dll_core.o  -o binMingw64wl\Debug\dll_core.dll  -lkernel32 -luser32<br />
+Output file is binMingw64wl\Debug\dll_core.dll with size 57.02 KB<br />
+cmd /c type binMingw64wl\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release Mingw64 wl in BUILD_DLL (compiler: GNU GCC MinGW64 Compiler)---------------</b><br />
+gcc --version<br />
+gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders) 13.1.0<br />
+Copyright (C) 2023 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -O2 -DNDEBUG -DBUILD_DLL -D_WIN64 -IC:\mingw64\x86_64-w64-mingw32\include -IC:\mingw-w64\mingw64\include -IC:\CodeBlocks.new\MinGW\include -IC:\CodeBlocks\MinGW\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMingw64wl\Release\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMingw64wl\Release\libdll_core.def -Wl,--out-implib=binMingw64wl\Release\libdll_core.a -Wl,--dll -LC:\mingw64\x86_64-w64-mingw32\lib -LC:\mingw-w64\mingw64\lib -LC:\CodeBlocks.new\MinGW\lib -LC:\CodeBlocks\MinGW\lib objMingw64wl\Release\src\dll_core.o  -o binMingw64wl\Release\dll_core.dll -s  -lkernel32 -luser32<br />
+Output file is binMingw64wl\Release\dll_core.dll with size 19.50 KB<br />
+cmd /c type binMingw64wl\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug TDM MinGW32 in BUILD_DLL (compiler: TDM GCC Compiler)---------------</b><br />
+gcc --version<br />
+gcc (tdm-1) 10.3.0<br />
+Copyright © 2020 Free Software Foundation, Inc.<br />
+Ce logiciel est un logiciel libre; voir les sources pour les conditions de copie.  Il n'y a<br />
+AUCUNE GARANTIE, pas même pour la COMMERCIALISATION ni L'ADÉQUATION À UNE TÂCHE PARTICULIÈRE.<br />
+gcc.exe -std=c99 -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN32 -m32 -IC:\TDM-GCC-32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objTDMW32\Debug\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binTDMW32\Debug\libdll_core.def -Wl,--out-implib=binTDMW32\Debug\libdll_core.a -Wl,--dll -LC:\TDM-GCC-32\lib objTDMW32\Debug\src\dll_core.o  -o binTDMW32\Debug\dll_core.dll -m32  -lkernel32 -luser32<br />
+Output file is binTDMW32\Debug\dll_core.dll with size 157.21 KB<br />
+cmd /c type binTDMW32\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release TDM MinGW32 in BUILD_DLL (compiler: TDM GCC Compiler)---------------</b><br />
+gcc --version<br />
+gcc (tdm-1) 10.3.0<br />
+Copyright © 2020 Free Software Foundation, Inc.<br />
+Ce logiciel est un logiciel libre; voir les sources pour les conditions de copie.  Il n'y a<br />
+AUCUNE GARANTIE, pas même pour la COMMERCIALISATION ni L'ADÉQUATION À UNE TÂCHE PARTICULIÈRE.<br />
+gcc.exe -O2 -std=c99 -DNDEBUG -DBUILD_DLL -D_WIN32 -m32 -IC:\TDM-GCC-32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objTDMW32\Release\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binTDMW32\Release\libdll_core.def -Wl,--out-implib=binTDMW32\Release\libdll_core.a -Wl,--dll -LC:\TDM-GCC-32\lib objTDMW32\Release\src\dll_core.o  -o binTDMW32\Release\dll_core.dll -s -m32  -lkernel32 -luser32<br />
+Output file is binTDMW32\Release\dll_core.dll with size 96.00 KB<br />
+cmd /c type binTDMW32\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug TDM MinGW64 in BUILD_DLL (compiler: TDM GCC X64 Compiler)---------------</b><br />
+gcc --version<br />
+gcc (tdm64-1) 10.3.0<br />
+Copyright © 2020 Free Software Foundation, Inc.<br />
+Ce logiciel est un logiciel libre; voir les sources pour les conditions de copie.  Il n'y a<br />
+AUCUNE GARANTIE, pas même pour la COMMERCIALISATION ni L'ADÉQUATION À UNE TÂCHE PARTICULIÈRE.<br />
+gcc.exe -march=core2 -g -std=c99 -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN64 -m64 -IC:\TDM-GCC-64\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objTDMW64\Debug\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binTDMW64\Debug\libdll_core.def -Wl,--out-implib=binTDMW64\Debug\libdll_core.a -Wl,--dll -LC:\TDM-GCC-64\lib objTDMW64\Debug\src\dll_core.o  -o binTDMW64\Debug\dll_core.dll -m64  -lkernel32 -luser32<br />
+Output file is binTDMW64\Debug\dll_core.dll with size 264.74 KB<br />
+cmd /c type binTDMW64\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release TDM MinGW64 in BUILD_DLL (compiler: TDM GCC X64 Compiler)---------------</b><br />
+gcc --version<br />
+gcc (tdm64-1) 10.3.0<br />
+Copyright © 2020 Free Software Foundation, Inc.<br />
+Ce logiciel est un logiciel libre; voir les sources pour les conditions de copie.  Il n'y a<br />
+AUCUNE GARANTIE, pas même pour la COMMERCIALISATION ni L'ADÉQUATION À UNE TÂCHE PARTICULIÈRE.<br />
+gcc.exe -march=core2 -O2 -std=c99 -DNDEBUG -DBUILD_DLL -D_WIN64 -m64 -IC:\TDM-GCC-64\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objTDMW64\Release\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binTDMW64\Release\libdll_core.def -Wl,--out-implib=binTDMW64\Release\libdll_core.a -Wl,--dll -LC:\TDM-GCC-64\lib objTDMW64\Release\src\dll_core.o  -o binTDMW64\Release\dll_core.dll -s -m64  -lkernel32 -luser32<br />
+Output file is binTDMW64\Release\dll_core.dll with size 37.00 KB<br />
+cmd /c type binTDMW64\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug MSYS2W32 in BUILD_DLL (compiler: GNU GCC MSYS MinGW32 Compiler)---------------</b><br />
+gcc --version<br />
+gcc (Rev3, Built by MSYS2 project) 13.2.0<br />
+Copyright (C) 2023 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN32 -m32 -D_WIN32 -IC:\msys64\mingw32\i686-w64-mingw32\include -IC:\msys64\mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMSYS2W32\Debug\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMSYS2W32\Debug\libdll_core.def -Wl,--out-implib=binMSYS2W32\Debug\libdll_core.a -Wl,--dll -LC:\msys64\mingw32\i686-w64-mingw32\lib -LC:\msys64\mingw32\lib objMSYS2W32\Debug\src\dll_core.o  -o binMSYS2W32\Debug\dll_core.dll -m32  -lkernel32 -luser32<br />
+Output file is binMSYS2W32\Debug\dll_core.dll with size 212.60 KB<br />
+cmd /c type binMSYS2W32\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release MSYS2W32 in BUILD_DLL (compiler: GNU GCC MSYS MinGW32 Compiler)---------------</b><br />
+gcc --version<br />
+gcc (Rev3, Built by MSYS2 project) 13.2.0<br />
+Copyright (C) 2023 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -O2 -DNDEBUG -DBUILD_DLL -D_WIN32 -m32 -D_WIN32 -IC:\msys64\mingw32\i686-w64-mingw32\include -IC:\msys64\mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMSYS2W32\Release\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMSYS2W32\Release\libdll_core.def -Wl,--out-implib=binMSYS2W32\Release\libdll_core.a -Wl,--dll -LC:\msys64\mingw32\i686-w64-mingw32\lib -LC:\msys64\mingw32\lib objMSYS2W32\Release\src\dll_core.o  -o binMSYS2W32\Release\dll_core.dll -s -m32  -lkernel32 -luser32<br />
+Output file is binMSYS2W32\Release\dll_core.dll with size 43.50 KB<br />
+cmd /c type binMSYS2W32\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug MSYS2W64 in BUILD_DLL (compiler: GNU GCC MSYS MinGW64 Compiler)---------------</b><br />
+gcc --version<br />
+gcc (Rev3, Built by MSYS2 project) 13.2.0<br />
+Copyright (C) 2023 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN64 -m64 -D_WIN64 -IC:\msys64\mingw64\x86_64-w64-mingw32\include -IC:\msys64\mingw64\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMSYS2W64\Debug\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMSYS2W64\Debug\libdll_core.def -Wl,--out-implib=binMSYS2W64\Debug\libdll_core.a -Wl,--dll -LC:\msys64\mingw64\x86_64-w64-mingw32\lib -LC:\msys64\mingw64\lib objMSYS2W64\Debug\src\dll_core.o  -o binMSYS2W64\Debug\dll_core.dll -m64  -lkernel32 -luser32<br />
+Output file is binMSYS2W64\Debug\dll_core.dll with size 218.12 KB<br />
+cmd /c type binMSYS2W64\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release MSYS2W64 in BUILD_DLL (compiler: GNU GCC MSYS MinGW64 Compiler)---------------</b><br />
+gcc --version<br />
+gcc (Rev3, Built by MSYS2 project) 13.2.0<br />
+Copyright (C) 2023 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -O2 -DNDEBUG -DBUILD_DLL -D_WIN64 -m64 -D_WIN64 -IC:\msys64\mingw64\x86_64-w64-mingw32\include -IC:\msys64\mingw64\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMSYS2W64\Release\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMSYS2W64\Release\libdll_core.def -Wl,--out-implib=binMSYS2W64\Release\libdll_core.a -Wl,--dll -LC:\msys64\mingw64\x86_64-w64-mingw32\lib -LC:\msys64\mingw64\lib objMSYS2W64\Release\src\dll_core.o  -o binMSYS2W64\Release\dll_core.dll -s -m64  -lkernel32 -luser32<br />
+Output file is binMSYS2W64\Release\dll_core.dll with size 38.50 KB<br />
+cmd /c type binMSYS2W64\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug MSYS2 UCRT64 in BUILD_DLL (compiler: GNU GCC MSYS UCRT64 Compiler)---------------</b><br />
+gcc --version<br />
+gcc (Rev3, Built by MSYS2 project) 13.2.0<br />
+Copyright (C) 2023 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN64 -IC:\msys64\ucrt64\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMSYS2U64\Debug\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMSYS2U64\Debug\libdll_core.def -Wl,--out-implib=binMSYS2U64\Debug\libdll_core.a -Wl,--dll -LC:\msys64\ucrt64\lib objMSYS2U64\Debug\src\dll_core.o  -o binMSYS2U64\Debug\dll_core.dll  -lkernel32 -luser32<br />
+Output file is binMSYS2U64\Debug\dll_core.dll with size 108.54 KB<br />
+cmd /c type binMSYS2W64\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release MSYS2 UCRT64 in BUILD_DLL (compiler: GNU GCC MSYS UCRT64 Compiler)---------------</b><br />
+gcc --version<br />
+gcc (Rev3, Built by MSYS2 project) 13.2.0<br />
+Copyright (C) 2023 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br />
+gcc.exe -DNDEBUG -DBUILD_DLL -D_WIN64 -IC:\msys64\ucrt64\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objMSYS2U64\Release\src\dll_core.o<br />
+gcc.exe -shared -Wl,--output-def=binMSYS2U64\Release\libdll_core.def -Wl,--out-implib=binMSYS2U64\Release\libdll_core.a -Wl,--dll -LC:\msys64\ucrt64\lib objMSYS2U64\Release\src\dll_core.o  -o binMSYS2U64\Release\dll_core.dll  -lkernel32 -luser32<br />
+Output file is binMSYS2U64\Release\dll_core.dll with size 105.83 KB<br />
+cmd /c type binMSYS2W64\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug VS2022 X32 in BUILD_DLL (compiler: Microsoft Visual C++ 2022)---------------</b><br />
+cl.exe /nologo  /ZI -D -g /D_DEBUG /DDEBUG -DBUILD_DLL -D_WIN32    /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include" /c src\dll_core.c /FoobjVS2022X32\Debug\src\dll_core.obj<br />
+dll_core.c<br />
+link.exe /dll /nologo /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x86" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x86" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x86" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x86\store" /out:binVS2022X32\Debug\dll_core.dll kernel32.lib user32.lib objVS2022X32\Debug\src\dll_core.obj  /debug<br />
+LINK : binVS2022X32\Debug\dll_core.dll introuvable ou non g‚n‚r‚ par la derniŠre ‚dition de liens incr‚mentielleÿ; ‚dition de liens complŠte en cours<br />
+   Cr‚ation de la bibliothŠque binVS2022X32\Debug\dll_core.lib et de l'objet binVS2022X32\Debug\dll_core.exp<br />
+Output file is binVS2022X32\Debug\dll_core.dll with size 474.50 KB<br />
+dumpbin /exports binVS2022X32\Debug\dll_core.dll<br />
+Microsoft (R) COFF/PE Dumper Version 14.38.33134.0<br />
+Copyright (C) Microsoft Corporation.  All rights reserved.<br />
+Dump of file binVS2022X32\Debug\dll_core.dll<br />
+File Type: DLL<br />
+  Section contains the following exports for dll_core.dll<br />
+    00000000 characteristics<br />
+    FFFFFFFF time date stamp<br />
+        0.00 version<br />
+           1 ordinal base<br />
+          11 number of functions<br />
+          11 number of names<br />
+    ordinal hint RVA      name<br />
+          1    0 00031481 Adddbl = @ILT+9340(_Adddbl)<br />
+          2    1 0003165C Addint = @ILT+9815(_Addint)<br />
+          3    2 000311CA Divdbl = @ILT+8645(_Divdbl)<br />
+          4    3 000307B6 Divint = @ILT+6065(_Divint)<br />
+          5    4 0002F86B Hello = @ILT+2150(_Hello)<br />
+          6    5 0003183C Multdbl = @ILT+10295(_Multdbl)<br />
+          7    6 0002F4B5 Multint = @ILT+1200(_Multint)<br />
+          8    7 00030040 Squardbl = @ILT+4155(_Squardbl)<br />
+          9    8 00030F86 Squarint = @ILT+8065(_Squarint)<br />
+         10    9 00031940 Subdbl = @ILT+10555(_Subdbl)<br />
+         11    A 0002F7C1 Subint = @ILT+1980(_Subint)<br />
+  Summary<br />
+        1000 .00cfg<br />
+        3000 .data<br />
+        1000 .idata<br />
+        C000 .rdata<br />
+        3000 .reloc<br />
+       66000 .text<br />
+       2E000 .textbss<br />
+<b>-------------- Build: Release VS2022 X32 in BUILD_DLL (compiler: Microsoft Visual C++ 2022)---------------</b><br />
+cl.exe /nologo  /TC -DNDEBUG -DBUILD_DLL -D_WIN32    /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include" /c src\dll_core.c /FoobjVS2022X32\Release\src\dll_core.obj<br />
+dll_core.c<br />
+link.exe /dll /nologo /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x86" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x86" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x86" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x86\store" /out:binVS2022X32\Release\dll_core.dll kernel32.lib user32.lib objVS2022X32\Release\src\dll_core.obj<br />
+   Cr‚ation de la bibliothŠque binVS2022X32\Release\dll_core.lib et de l'objet binVS2022X32\Release\dll_core.exp<br />
+Output file is binVS2022X32\Release\dll_core.dll with size 106.50 KB<br />
+dumpbin /exports binVS2022X32\Release\dll_core.dll<br />
+Microsoft (R) COFF/PE Dumper Version 14.38.33134.0<br />
+Copyright (C) Microsoft Corporation.  All rights reserved.<br />
+Dump of file binVS2022X32\Release\dll_core.dll<br />
+File Type: DLL<br />
+  Section contains the following exports for dll_core.dll<br />
+    00000000 characteristics<br />
+    FFFFFFFF time date stamp<br />
+        0.00 version<br />
+           1 ordinal base<br />
+          11 number of functions<br />
+          11 number of names<br />
+    ordinal hint RVA      name<br />
+          1    0 00001090 Adddbl<br />
+          2    1 00001020 Addint<br />
+          3    2 000010F0 Divdbl<br />
+          4    3 00001050 Divint<br />
+          5    4 00001000 Hello<br />
+          6    5 000010D0 Multdbl<br />
+          7    6 00001040 Multint<br />
+          8    7 00001140 Squardbl<br />
+          9    8 00001080 Squarint<br />
+         10    9 000010B0 Subdbl<br />
+         11    A 00001030 Subint<br />
+  Summary<br />
+        2000 .data<br />
+        7000 .rdata<br />
+        1000 .reloc<br />
+       12000 .text<br />
+<b>-------------- Build: Debug VS2022 X64 in BUILD_DLL (compiler: Microsoft Visual C++ 2022 X64)---------------</b><br />
+cl.exe /nologo  /TC /Zi /D_DEBUG /DDEBUG -DBUILD_DLL -D_WIN64    /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include" /c src\dll_core.c /FoobjVS2022X64\Debug\src\dll_core.obj<br />
+dll_core.c<br />
+link.exe /dll /nologo /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x64" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x64" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\store" /out:binVS2022X64\Debug\dll_core.dll kernel32.lib user32.lib objVS2022X64\Debug\src\dll_core.obj  /debug /MACHINE:X64<br />
+LINK : binVS2022X64\Debug\dll_core.dll introuvable ou non g‚n‚r‚ par la derniŠre ‚dition de liens incr‚mentielleÿ; ‚dition de liens complŠte en cours<br />
+   Cr‚ation de la bibliothŠque binVS2022X64\Debug\dll_core.lib et de l'objet binVS2022X64\Debug\dll_core.exp<br />
+Output file is binVS2022X64\Debug\dll_core.dll with size 630.50 KB<br />
+dumpbin /exports binVS2022X64\Debug\dll_core.dll<br />
+Microsoft (R) COFF/PE Dumper Version 14.38.33134.0<br />
+Copyright (C) Microsoft Corporation.  All rights reserved.<br />
+Dump of file binVS2022X64\Debug\dll_core.dll<br />
+File Type: DLL<br />
+  Section contains the following exports for dll_core.dll<br />
+    00000000 characteristics<br />
+    FFFFFFFF time date stamp<br />
+        0.00 version<br />
+           1 ordinal base<br />
+          11 number of functions<br />
+          11 number of names<br />
+    ordinal hint RVA      name<br />
+          1    0 00003855 Adddbl = @ILT+10320(Adddbl)<br />
+          2    1 000026C6 Addint = @ILT+5825(Addint)<br />
+          3    2 00002B67 Divdbl = @ILT+7010(Divdbl)<br />
+          4    3 00002FE0 Divint = @ILT+8155(Divint)<br />
+          5    4 000011CC Hello = @ILT+455(Hello)<br />
+          6    5 000023AB Multdbl = @ILT+5030(Multdbl)<br />
+          7    6 00001E3D Multint = @ILT+3640(Multint)<br />
+          8    7 00003E0E Squardbl = @ILT+11785(Squardbl)<br />
+          9    8 00003D3C Squarint = @ILT+11575(Squarint)<br />
+         10    9 0000240A Subdbl = @ILT+5125(Subdbl)<br />
+         11    A 00001FB4 Subint = @ILT+4015(Subint)<br />
+  Summary<br />
+        1000 .00cfg<br />
+        4000 .data<br />
+        1000 .idata<br />
+        5000 .pdata<br />
+       16000 .rdata<br />
+        1000 .reloc<br />
+       7F000 .text<br />
+        1000 _RDATA<br />
+        1000 memcpy_<br />
+<b>-------------- Build: Release VS2022 X64 in BUILD_DLL (compiler: Microsoft Visual C++ 2022 X64)---------------</b><br />
+cl.exe /nologo  /TC -DNDEBUG -DBUILD_DLL -D_WIN64    /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I"C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um" /I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include" /c src\dll_core.c /FoobjVS2022X64\Release\src\dll_core.obj<br />
+dll_core.c<br />
+link.exe /dll /nologo /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x64" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x64" /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\store" /out:binVS2022X64\Release\dll_core.dll kernel32.lib user32.lib objVS2022X64\Release\src\dll_core.obj  /MACHINE:X64<br />
+   Cr‚ation de la bibliothŠque binVS2022X64\Release\dll_core.lib et de l'objet binVS2022X64\Release\dll_core.exp<br />
+Output file is binVS2022X64\Release\dll_core.dll with size 136.00 KB<br />
+dumpbin /exports binVS2022X64\Release\dll_core.dll<br />
+Microsoft (R) COFF/PE Dumper Version 14.38.33134.0<br />
+Copyright (C) Microsoft Corporation.  All rights reserved.<br />
+Dump of file binVS2022X64\Release\dll_core.dll<br />
+File Type: DLL<br />
+  Section contains the following exports for dll_core.dll<br />
+    00000000 characteristics<br />
+    FFFFFFFF time date stamp<br />
+        0.00 version<br />
+           1 ordinal base<br />
+          11 number of functions<br />
+          11 number of names<br />
+    ordinal hint RVA      name<br />
+          1    0 000010E0 Adddbl<br />
+          2    1 00001020 Addint<br />
+          3    2 00001140 Divdbl<br />
+          4    3 00001080 Divint<br />
+          5    4 00001000 Hello<br />
+          6    5 00001120 Multdbl<br />
+          7    6 00001060 Multint<br />
+          8    7 000011A0 Squardbl<br />
+          9    8 000010C0 Squarint<br />
+         10    9 00001100 Subdbl<br />
+         11    A 00001040 Subint<br />
+  Summary<br />
+        2000 .data<br />
+        2000 .pdata<br />
+        B000 .rdata<br />
+        1000 .reloc<br />
+       15000 .text<br />
+        1000 _RDATA<br />
+<b>-------------- Build: Debug DMC in BUILD_DLL (compiler: Digital Mars Compiler)---------------</b><br />
+dmc.exe -mn -c  -WD -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN32    -IC:\dm\include\win32 -IC:\dm\stlport\stlport -IC:\dm\include -oobjDMC\Debug\src\dll_core.obj src\dll_core.c<br />
+link.exe /NOLOGO /subsystem:windows /IMPL:binDMC\Debug\dll_core.lib /DEBUG  objDMC\Debug\src\dll_core.obj, binDMC\Debug\dll_core.dll, , user32.lib kernel32.lib, src\dll_core_dmc.def ,<br />
+Output file is binDMC\Debug\dll_core.dll with size 30.03 KB<br />
+libunres -p binDMC\Debug\dll_core.lib<br />
+_Adddbl<br />
+_Addint<br />
+_Divdbl<br />
+_Divint<br />
+_DllMain<br />
+_DllMain@12<br />
+_Hello<br />
+_Multdbl<br />
+_Multint<br />
+_Squardbl<br />
+_Squarint<br />
+_Subdbl<br />
+_Subint<br />
+<b>-------------- Build: Release DMC in BUILD_DLL (compiler: Digital Mars Compiler)---------------</b><br />
+dmc.exe -mn -c  -WD -DNEBUG -DBUILD_DLL -D_WIN32    -IC:\dm\include\win32 -IC:\dm\stlport\stlport -IC:\dm\include -oobjDMC\Release\src\dll_core.obj src\dll_core.c<br />
+link.exe /NOLOGO /subsystem:windows /IMPL:binDMC\Release\dll_core.lib  objDMC\Release\src\dll_core.obj, binDMC\Release\dll_core.dll, , user32.lib kernel32.lib, src\dll_core_dmc.def ,<br />
+Output file is binDMC\Release\dll_core.dll with size 30.03 KB<br />
+libunres -p binDMC\Release\dll_core.lib<br />
+_Adddbl<br />
+_Addint<br />
+_Divdbl<br />
+_Divint<br />
+_DllMain<br />
+_DllMain@12<br />
+_Hello<br />
+_Multdbl<br />
+_Multint<br />
+_Squardbl<br />
+_Squarint<br />
+_Subdbl<br />
+_Subint<br />
+<b>-------------- Build: Debug lcc64 in BUILD_DLL (compiler: LCC Compiler 64)---------------</b><br />
+lcc64.exe -c -IC:\lcc64\include64 -IC:\lcc64\include  -g2 -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN64 -D__LCC64__    src\dll_core.c -Foobjlcc64\Debug\src\dll_core.obj<br />
+lcclnk64.exe -dll -LC:\lcc64\lib64 -LC:\lcc64\lib src\dll_core_lcc.def -entry LibMain  objlcc64\Debug\src\dll_core.obj  kernel32.lib user32.lib -o binlcc64\Debug\dll_core.dll<br />
+Output file is binlcc64\Debug\dll_core.dll with size 173.84 KB<br />
+lcclib64  binlcc64\Debug\dll_core.lib  objlcc64\Debug\src\dll_core.obj<br />
+pedump /EXP binlcc64\Debug\dll_core.dll<br />
+Adddbl<br />
+Addint<br />
+Divdbl<br />
+Divint<br />
+Hello<br />
+LibMain<br />
+Multdbl<br />
+Multint<br />
+Squardbl<br />
+Squarint<br />
+Subdbl<br />
+Subint<br />
+pedump /EXP binlcc64\Debug\dll_core.lib<br />
+Name of the dll unknown!<br />
+Squardbl<br />
+Divdbl<br />
+Multdbl<br />
+Subdbl<br />
+Adddbl<br />
+Squarint<br />
+Divint<br />
+Multint<br />
+Subint<br />
+Addint<br />
+Hello<br />
+LibMain<br />
+<b>-------------- Build: Release lcc64 in BUILD_DLL (compiler: LCC Compiler 64)---------------</b><br />
+lcc64.exe -c -IC:\lcc64\include64 -IC:\lcc64\include  -DNDEBUG -DBUILD_DLL -D_WIN64 -D__LCC64__    src\dll_core.c -Foobjlcc64\Release\src\dll_core.obj<br />
+lcclnk64.exe -dll -LC:\lcc64\lib64 -LC:\lcc64\lib src\dll_core_lcc.def -entry LibMain  objlcc64\Release\src\dll_core.obj  kernel32.lib user32.lib -o binlcc64\Release\dll_core.dll<br />
+Output file is binlcc64\Release\dll_core.dll with size 169.84 KB<br />
+lcclib64  binlcc64\Release\dll_core.lib  objlcc64\Release\src\dll_core.obj<br />
+pedump /EXP binlcc64\Release\dll_core.dll<br />
+Adddbl<br />
+Addint<br />
+Divdbl<br />
+Divint<br />
+Hello<br />
+LibMain<br />
+Multdbl<br />
+Multint<br />
+Squardbl<br />
+Squarint<br />
+Subdbl<br />
+Subint<br />
+pedump /EXP binlcc64\Release\dll_core.lib<br />
+Name of the dll unknown!<br />
+Squardbl<br />
+Divdbl<br />
+Multdbl<br />
+Subdbl<br />
+Adddbl<br />
+Squarint<br />
+Divint<br />
+Multint<br />
+Subint<br />
+Addint<br />
+Hello<br />
+LibMain<br />
+<b>-------------- Build: Debug BorlandC in BUILD_DLL (compiler: Borland C++ Compiler (5.5, 5.82))---------------</b><br />
+bcc32.exe -q  -tWD -6 -y -v -DDEBUG -D_DEBUG -DBUILD_DLL -D_WIN32    -IC:\BCC55\include -oobjBC55\Debug\src\dll_core.obj -c src\dll_core.c<br />
+src\dll_core.c:<br />
+<font color="#0000ff">Warning W8057 src\dll_core.c 59: Parameter 'hinstDll' is never used in function DllEntryPoint</font><br />
+<font color="#0000ff">Warning W8057 src\dll_core.c 59: Parameter 'reserved' is never used in function DllEntryPoint</font><br />
+ilink32.exe -q -LC:\BCC55\lib -LC:\BCC55\lib\psdk -Tpd -v /Gi  objBC55\Debug\src\dll_core.obj, binBC55\Debug\dll_core.dll,, kernel32.lib cw32i.lib user32.lib import32.lib, src\dll_core_bcc.def,<br />
+Output file is binBC55\Debug\dll_core.dll with size 4.50 KB<br />
+impdef binBC55\Debug\dll_core.def binBC55\Debug\dll_core.dll<br />
+Borland Impdef Version 3.0.22 Copyright (c) 1991, 2000 Inprise Corporation<br />
+cmd /c type binBC55\Debug\dll_core.def<br />
+LIBRARY     DLL_CORE.DLL<br />
+EXPORTS<br />
+    Adddbl                         @21  ; Adddbl<br />
+    Addint                         @15  ; Addint<br />
+    Divdbl                         @24  ; Divdbl<br />
+    Divint                         @19  ; Divint<br />
+    DllEntryPoint                  @1   ; DllEntryPoint<br />
+    DllMain                        @13  ; DllMain<br />
+    Hello                          @16  ; Hello<br />
+    Multdbl                        @23  ; Multdbl<br />
+    Multint                        @18  ; Multint<br />
+    Squardbl                       @25  ; Squardbl<br />
+    Squarint                       @20  ; Squarint<br />
+    Subdbl                         @22  ; Subdbl<br />
+    Subint                         @17  ; Subint<br />
+    _Adddbl                        @8   ; _Adddbl<br />
+    _Addint                        @3   ; _Addint<br />
+    _Divdbl                        @11  ; _Divdbl<br />
+    _Divint                        @6   ; _Divint<br />
+    _DllMain                       @14  ; _DllMain<br />
+    _Hello                         @2   ; _Hello<br />
+    _Multdbl                       @10  ; _Multdbl<br />
+    _Multint                       @5   ; _Multint<br />
+    _Squardbl                      @12  ; _Squardbl<br />
+    _Squarint                      @7   ; _Squarint<br />
+    _Subdbl                        @9   ; _Subdbl<br />
+    _Subint                        @4   ; _Subint<br />
+<b>-------------- Build: Release BorlandC in BUILD_DLL (compiler: Borland C++ Compiler (5.5, 5.82))---------------</b><br />
+bcc32.exe -q  -tWD -6 -v- -DNDEBUG -DBUILD_DLL -D_WIN32    -IC:\BCC55\include -oobjBC55\Release\src\dll_core.obj -c src\dll_core.c<br />
+src\dll_core.c:<br />
+<font color="#0000ff">Warning W8057 src\dll_core.c 59: Parameter 'hinstDll' is never used in function DllEntryPoint</font><br />
+<font color="#0000ff">Warning W8057 src\dll_core.c 59: Parameter 'reserved' is never used in function DllEntryPoint</font><br />
+ilink32.exe -q -LC:\BCC55\lib -LC:\BCC55\lib\psdk -Tpd /Gi  objBC55\Release\src\dll_core.obj, binBC55\Release\dll_core.dll,, kernel32.lib cw32i.lib user32.lib import32.lib, src\dll_core_bcc.def,<br />
+Output file is binBC55\Release\dll_core.dll with size 4.50 KB<br />
+impdef binBC55\Release\dll_core.def binBC55\Release\dll_core.dll<br />
+Borland Impdef Version 3.0.22 Copyright (c) 1991, 2000 Inprise Corporation<br />
+cmd /c type binBC55\Release\dll_core.def<br />
+LIBRARY     DLL_CORE.DLL<br />
+EXPORTS<br />
+    Adddbl                         @21  ; Adddbl<br />
+    Addint                         @15  ; Addint<br />
+    Divdbl                         @24  ; Divdbl<br />
+    Divint                         @19  ; Divint<br />
+    DllEntryPoint                  @1   ; DllEntryPoint<br />
+    DllMain                        @13  ; DllMain<br />
+    Hello                          @16  ; Hello<br />
+    Multdbl                        @23  ; Multdbl<br />
+    Multint                        @18  ; Multint<br />
+    Squardbl                       @25  ; Squardbl<br />
+    Squarint                       @20  ; Squarint<br />
+    Subdbl                         @22  ; Subdbl<br />
+    Subint                         @17  ; Subint<br />
+    _Adddbl                        @8   ; _Adddbl<br />
+    _Addint                        @3   ; _Addint<br />
+    _Divdbl                        @11  ; _Divdbl<br />
+    _Divint                        @6   ; _Divint<br />
+    _DllMain                       @14  ; _DllMain<br />
+    _Hello                         @2   ; _Hello<br />
+    _Multdbl                       @10  ; _Multdbl<br />
+    _Multint                       @5   ; _Multint<br />
+    _Squardbl                      @12  ; _Squardbl<br />
+    _Squarint                      @7   ; _Squarint<br />
+    _Subdbl                        @9   ; _Subdbl<br />
+    _Subint                        @4   ; _Subint<br />
+<b>-------------- Build: Debug OW 32 in BUILD_DLL (compiler: OpenWatcom (W32) Compiler)---------------</b><br />
+wcl386.exe -q -c  -bd -d2 -bt=nt -ecc -d_DEBUG -dDEBUG -dBUILD_DLL -d_WIN32    -iC:\watcom\h\nt -iC:\watcom\h -iC:\watcom\h -iC:\watcom\h\nt -fo=objOW32\Debug\src\dll_core.obj src\dll_core.c<br />
+wlink.exe option quiet debug all system nt_dll initinstance terminstance run win EXPORT=src\dll_core_ow.lbc option implib=binOW32\Debug\dll_core.lib  LIBP  C:\watcom\lib386\nt;C:\watcom\lib386;C:\watcom\lib386;C:\watcom\lib386\nt name binOW32\Debug\dll_core.dll  file objOW32\Debug\src\dll_core.obj<br />
+Output file is binOW32\Debug\dll_core.dll with size 52.25 KB<br />
+wdump /i binOW32\Debug\dll_core.dll<br />
+Adddbl.'DLL_CORE.DLL'.7<br />
+Addint.'DLL_CORE.DLL'.2<br />
+Divdbl.'DLL_CORE.DLL'.10<br />
+Divint.'DLL_CORE.DLL'.5<br />
+Hello.'DLL_CORE.DLL'.1<br />
+Multdbl.'DLL_CORE.DLL'.9<br />
+Multint.'DLL_CORE.DLL'.4<br />
+Squardbl.'DLL_CORE.DLL'.11<br />
+Squarint.'DLL_CORE.DLL'.6<br />
+Subdbl.'DLL_CORE.DLL'.8<br />
+Subint.'DLL_CORE.DLL'.3<br />
+_Adddbl.'DLL_CORE.DLL'.18<br />
+_Addint.'DLL_CORE.DLL'.13<br />
+_Divdbl.'DLL_CORE.DLL'.21<br />
+_Divint.'DLL_CORE.DLL'.16<br />
+_Hello.'DLL_CORE.DLL'.12<br />
+_Multdbl.'DLL_CORE.DLL'.20<br />
+_Multint.'DLL_CORE.DLL'.15<br />
+_Squardbl.'DLL_CORE.DLL'.22<br />
+_Squarint.'DLL_CORE.DLL'.17<br />
+_Subdbl.'DLL_CORE.DLL'.19<br />
+_Subint.'DLL_CORE.DLL'.14<br />
+<b>-------------- Build: Release OW 32 in BUILD_DLL (compiler: OpenWatcom (W32) Compiler)---------------</b><br />
+wcl386.exe -q -c  -bd -d0 -bt=nt -ecc -dNDEBUG -dBUILD_DLL -d_WIN32    -iC:\watcom\h\nt -iC:\watcom\h -iC:\watcom\h -iC:\watcom\h\nt -fo=objOW32\Release\src\dll_core.obj src\dll_core.c<br />
+wlink.exe option quiet system nt_dll initinstance terminstance run win EXPORT=src\dll_core_ow.lbc option implib=binOW32\Release\dll_core.lib  LIBP  C:\watcom\lib386\nt;C:\watcom\lib386;C:\watcom\lib386;C:\watcom\lib386\nt name binOW32\Release\dll_core.dll  file objOW32\Release\src\dll_core.obj<br />
+Output file is binOW32\Release\dll_core.dll with size 33.00 KB<br />
+wdump /i binOW32\Release\dll_core.dll<br />
+Adddbl.'DLL_CORE.DLL'.7<br />
+Addint.'DLL_CORE.DLL'.2<br />
+Divdbl.'DLL_CORE.DLL'.10<br />
+Divint.'DLL_CORE.DLL'.5<br />
+Hello.'DLL_CORE.DLL'.1<br />
+Multdbl.'DLL_CORE.DLL'.9<br />
+Multint.'DLL_CORE.DLL'.4<br />
+Squardbl.'DLL_CORE.DLL'.11<br />
+Squarint.'DLL_CORE.DLL'.6<br />
+Subdbl.'DLL_CORE.DLL'.8<br />
+Subint.'DLL_CORE.DLL'.3<br />
+_Adddbl.'DLL_CORE.DLL'.18<br />
+_Addint.'DLL_CORE.DLL'.13<br />
+_Divdbl.'DLL_CORE.DLL'.21<br />
+_Divint.'DLL_CORE.DLL'.16<br />
+_Hello.'DLL_CORE.DLL'.12<br />
+_Multdbl.'DLL_CORE.DLL'.20<br />
+_Multint.'DLL_CORE.DLL'.15<br />
+_Squardbl.'DLL_CORE.DLL'.22<br />
+_Squarint.'DLL_CORE.DLL'.17<br />
+_Subdbl.'DLL_CORE.DLL'.19<br />
+_Subint.'DLL_CORE.DLL'.14<br />
+<b>-------------- Build: Debug OW 64 in BUILD_DLL (compiler: OpenWatcom (W64) Compiler)---------------</b><br />
+wcl386.exe -q -c  -bd -d2 -bt=nt -ecc -d_DEBUG -dDEBUG -dBUILD_DLL -d_WIN32    -iC:\watcom\h\nt -iC:\watcom\h -fo=objOW64\Debug\src\dll_core.obj src\dll_core.c<br />
+wlink.exe option quiet debug all system nt_dll initinstance terminstance run win EXPORT=src\dll_core_ow.lbc option implib=binOW64\Debug\dll_core.lib  LIBP  C:\watcom\lib386\nt;C:\watcom\lib386 name binOW64\Debug\dll_core.dll  file objOW64\Debug\src\dll_core.obj<br />
+Output file is binOW64\Debug\dll_core.dll with size 52.25 KB<br />
+wdump /i binOW64\Debug\dll_core.dll<br />
+Adddbl.'DLL_CORE.DLL'.7<br />
+Addint.'DLL_CORE.DLL'.2<br />
+Divdbl.'DLL_CORE.DLL'.10<br />
+Divint.'DLL_CORE.DLL'.5<br />
+Hello.'DLL_CORE.DLL'.1<br />
+Multdbl.'DLL_CORE.DLL'.9<br />
+Multint.'DLL_CORE.DLL'.4<br />
+Squardbl.'DLL_CORE.DLL'.11<br />
+Squarint.'DLL_CORE.DLL'.6<br />
+Subdbl.'DLL_CORE.DLL'.8<br />
+Subint.'DLL_CORE.DLL'.3<br />
+_Adddbl.'DLL_CORE.DLL'.18<br />
+_Addint.'DLL_CORE.DLL'.13<br />
+_Divdbl.'DLL_CORE.DLL'.21<br />
+_Divint.'DLL_CORE.DLL'.16<br />
+_Hello.'DLL_CORE.DLL'.12<br />
+_Multdbl.'DLL_CORE.DLL'.20<br />
+_Multint.'DLL_CORE.DLL'.15<br />
+_Squardbl.'DLL_CORE.DLL'.22<br />
+_Squarint.'DLL_CORE.DLL'.17<br />
+_Subdbl.'DLL_CORE.DLL'.19<br />
+_Subint.'DLL_CORE.DLL'.14<br />
+<b>-------------- Build: Release OW 64 in BUILD_DLL (compiler: OpenWatcom (W64) Compiler)---------------</b><br />
+wcl386.exe -q -c  -bd -d0 -bt=nt -ecc -dNDEBUG -dBUILD_DLL -d_WIN32    -iC:\watcom\h\nt -iC:\watcom\h -fo=objOW64\Release\src\dll_core.obj src\dll_core.c<br />
+wlink.exe option quiet system nt_dll initinstance terminstance run win EXPORT=src\dll_core_ow.lbc option implib=binOW64\Release\dll_core.lib  LIBP  C:\watcom\lib386\nt;C:\watcom\lib386 name binOW64\Release\dll_core.dll  file objOW64\Release\src\dll_core.obj<br />
+Output file is binOW64\Release\dll_core.dll with size 33.00 KB<br />
+wdump /i binOW64\Release\dll_core.dll<br />
+Adddbl.'DLL_CORE.DLL'.7<br />
+Addint.'DLL_CORE.DLL'.2<br />
+Divdbl.'DLL_CORE.DLL'.10<br />
+Divint.'DLL_CORE.DLL'.5<br />
+Hello.'DLL_CORE.DLL'.1<br />
+Multdbl.'DLL_CORE.DLL'.9<br />
+Multint.'DLL_CORE.DLL'.4<br />
+Squardbl.'DLL_CORE.DLL'.11<br />
+Squarint.'DLL_CORE.DLL'.6<br />
+Subdbl.'DLL_CORE.DLL'.8<br />
+Subint.'DLL_CORE.DLL'.3<br />
+_Adddbl.'DLL_CORE.DLL'.18<br />
+_Addint.'DLL_CORE.DLL'.13<br />
+_Divdbl.'DLL_CORE.DLL'.21<br />
+_Divint.'DLL_CORE.DLL'.16<br />
+_Hello.'DLL_CORE.DLL'.12<br />
+_Multdbl.'DLL_CORE.DLL'.20<br />
+_Multint.'DLL_CORE.DLL'.15<br />
+_Squardbl.'DLL_CORE.DLL'.22<br />
+_Squarint.'DLL_CORE.DLL'.17<br />
+_Subdbl.'DLL_CORE.DLL'.19<br />
+_Subint.'DLL_CORE.DLL'.14<br />
+<b>-------------- Build: Debug PELLES C in BUILD_DLL (compiler: PELLES C++ 2021)---------------</b><br />
+pocc.exe /nologo  /Gd /Zi /Ze /c /D_DEBUG /DDEBUG /DBUILD_DLL /D_WIN32  -Tx86-coff /D_X86_   /IC:\PellesC\include\Win /IC:\PellesC\include /c src\dll_core.c /FoobjPELLESC32\Debug\src\dll_core.obj<br />
+polink.exe /dll /nologo /LIBPATH:C:\PellesC\lib\Win /LIBPATH:C:\PellesC\lib /out:binPELLESC32\Debug\dll_core.dll user32.lib kernel32.lib objPELLESC32\Debug\src\dll_core.obj  /debug /dll /MACHINE:X86<br />
+Creating object: binPELLESC32\Debug\dll_core.exp<br />
+Creating library: binPELLESC32\Debug\dll_core.lib<br />
+Writing debug information<br />
+Compacting debug information<br />
+Output file is binPELLESC32\Debug\dll_core.dll with size 47.50 KB<br />
+podump /exports binPELLESC32\Debug\dll_core.dll<br />
+Dump of binPELLESC32\Debug\dll_core.dll<br />
+File type: DLL<br />
+        Exported symbols for dll_core.dll<br />
+               0 characteristics<br />
+        65A7ECAA time date stamp (Wed Jan 17 16:05:14 2024)<br />
+            0.00 version<br />
+               1 ordinal base<br />
+               B number of functions<br />
+               B number of names<br />
+        ordinal  hint  address   name<br />
+              1     0  100010EB  Adddbl<br />
+              2     1  1000108B  Addint<br />
+              3     2  10001112  Divdbl<br />
+              4     3  100010B3  Divint<br />
+              5     4  10001072  Hello<br />
+              6     5  10001105  Multdbl<br />
+              7     6  100010A5  Multint<br />
+              8     7  1000113D  Squardbl<br />
+              9     8  100010DD  Squarint<br />
+              A     9  100010F8  Subdbl<br />
+              B     A  10001098  Subint<br />
+SUMMARY<br />
+    2000 .data<br />
+    2000 .rdata<br />
+    1000 .reloc<br />
+    6000 .text<br />
+<b>-------------- Build: Release PELLES C in BUILD_DLL (compiler: PELLES C++ 2021)---------------</b><br />
+pocc.exe /nologo  /Gd /Ze /c /DNDEBUG /DBUILD_DLL /D_WIN32  -Tx86-coff /D_X86_   /IC:\PellesC\include\Win /IC:\PellesC\include /c src\dll_core.c /FoobjPELLESC32\Release\src\dll_core.obj<br />
+polink.exe /dll /nologo /LIBPATH:C:\PellesC\lib\Win /LIBPATH:C:\PellesC\lib /out:binPELLESC32\Release\dll_core.dll user32.lib kernel32.lib objPELLESC32\Release\src\dll_core.obj  /dll /MACHINE:X86<br />
+Creating object: binPELLESC32\Release\dll_core.exp<br />
+Creating library: binPELLESC32\Release\dll_core.lib<br />
+Output file is binPELLESC32\Release\dll_core.dll with size 32.50 KB<br />
+podump /exports binPELLESC32\Release\dll_core.dll<br />
+Dump of binPELLESC32\Release\dll_core.dll<br />
+File type: DLL<br />
+        Exported symbols for dll_core.dll<br />
+               0 characteristics<br />
+        65A7ECAB time date stamp (Wed Jan 17 16:05:15 2024)<br />
+            0.00 version<br />
+               1 ordinal base<br />
+               B number of functions<br />
+               B number of names<br />
+        ordinal  hint  address   name<br />
+              1     0  100010EB  Adddbl<br />
+              2     1  1000108B  Addint<br />
+              3     2  10001112  Divdbl<br />
+              4     3  100010B3  Divint<br />
+              5     4  10001072  Hello<br />
+              6     5  10001105  Multdbl<br />
+              7     6  100010A5  Multint<br />
+              8     7  1000113D  Squardbl<br />
+              9     8  100010DD  Squarint<br />
+              A     9  100010F8  Subdbl<br />
+              B     A  10001098  Subint<br />
+SUMMARY<br />
+    2000 .data<br />
+    2000 .rdata<br />
+    1000 .reloc<br />
+    6000 .text<br />
+<b>-------------- Build: Debug PELLES C 64 in BUILD_DLL (compiler: PELLES C++ 2021 (64b))---------------</b><br />
+pocc.exe /nologo  /Gd /Zi /Ze /c /D_DEBUG /DDEBUG /DBUILD_DLL /D_WIN64  -Tx64-coff /D_AMD64_ /D_WIN64   /IC:\PellesC\include\Win /IC:\PellesC\include /c src\dll_core.c /FoobjPELLESC64\Debug\src\dll_core.obj<br />
+polink.exe /dll /nologo /LIBPATH:C:\PellesC\lib\Win64 /LIBPATH:C:\PellesC\lib /out:binPELLESC64\Debug\dll_core.dll user32.lib kernel32.lib objPELLESC64\Debug\src\dll_core.obj  /debug /dll /MACHINE:X64<br />
+Creating object: binPELLESC64\Debug\dll_core.exp<br />
+Creating library: binPELLESC64\Debug\dll_core.lib<br />
+Writing debug information<br />
+Compacting debug information<br />
+Output file is binPELLESC64\Debug\dll_core.dll with size 54.00 KB<br />
+podump /exports binPELLESC64\Debug\dll_core.dll<br />
+Dump of binPELLESC64\Debug\dll_core.dll<br />
+File type: DLL<br />
+        Exported symbols for dll_core.dll<br />
+               0 characteristics<br />
+        65A7ECAC time date stamp (Wed Jan 17 16:05:16 2024)<br />
+            0.00 version<br />
+               1 ordinal base<br />
+               B number of functions<br />
+               B number of names<br />
+        ordinal  hint  address           name<br />
+              1     0  000000018000110E  Adddbl<br />
+              2     1  0000000180001092  Addint<br />
+              3     2  000000018000115C  Divdbl<br />
+              4     3  00000001800010C9  Divint<br />
+              5     4  0000000180001078  Hello<br />
+              6     5  0000000180001142  Multdbl<br />
+              7     6  00000001800010B6  Multint<br />
+              8     7  00000001800011A5  Squardbl<br />
+              9     8  00000001800010FF  Squarint<br />
+              A     9  0000000180001128  Subdbl<br />
+              B     A  00000001800010A4  Subint<br />
+SUMMARY<br />
+    2000 .data<br />
+    1000 .pdata<br />
+    2000 .rdata<br />
+    1000 .reloc<br />
+    6000 .text<br />
+<b>-------------- Build: Release PELLES C 64 in BUILD_DLL (compiler: PELLES C++ 2021 (64b))---------------</b><br />
+pocc.exe /nologo  /Gd /Ze /c /DNDEBUG /DBUILD_DLL /D_WIN64  -Tx64-coff /D_AMD64_ /D_WIN64   /IC:\PellesC\include\Win /IC:\PellesC\include /c src\dll_core.c /FoobjPELLESC64\Release\src\dll_core.obj<br />
+polink.exe /dll /nologo /LIBPATH:C:\PellesC\lib\Win64 /LIBPATH:C:\PellesC\lib /out:binPELLESC64\Release\dll_core.dll user32.lib kernel32.lib objPELLESC64\Release\src\dll_core.obj  /dll /MACHINE:X64<br />
+Creating object: binPELLESC64\Release\dll_core.exp<br />
+Creating library: binPELLESC64\Release\dll_core.lib<br />
+Output file is binPELLESC64\Release\dll_core.dll with size 39.00 KB<br />
+podump /exports binPELLESC64\Release\dll_core.dll<br />
+Dump of binPELLESC64\Release\dll_core.dll<br />
+File type: DLL<br />
+        Exported symbols for dll_core.dll<br />
+               0 characteristics<br />
+        65A7ECAD time date stamp (Wed Jan 17 16:05:17 2024)<br />
+            0.00 version<br />
+               1 ordinal base<br />
+               B number of functions<br />
+               B number of names<br />
+        ordinal  hint  address           name<br />
+              1     0  000000018000110E  Adddbl<br />
+              2     1  0000000180001092  Addint<br />
+              3     2  000000018000115C  Divdbl<br />
+              4     3  00000001800010C9  Divint<br />
+              5     4  0000000180001078  Hello<br />
+              6     5  0000000180001142  Multdbl<br />
+              7     6  00000001800010B6  Multint<br />
+              8     7  00000001800011A5  Squardbl<br />
+              9     8  00000001800010FF  Squarint<br />
+              A     9  0000000180001128  Subdbl<br />
+              B     A  00000001800010A4  Subint<br />
+SUMMARY<br />
+    2000 .data<br />
+    1000 .pdata<br />
+    2000 .rdata<br />
+    1000 .reloc<br />
+    6000 .text<br />
+<b>-------------- Build: Debug CLANG Mingw32 in BUILD_DLL (compiler: LLVM Clang Compiler W32)---------------</b><br />
+clang --version<br />
+(built by Brecht Sanders) clang version 17.0.5<br />
+Target: i686-w64-windows-gnu<br />
+Thread model: posix<br />
+InstalledDir: C:/mingw32/bin<br />
+clang.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN32 -m32 -IC:\mingw32\i686-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objCLANGW32\Debug\src\dll_core.o<br />
+clang.exe -shared -Wl,--output-def=binCLANGW32\Debug\libdll_core.def -Wl,--out-implib=binCLANGW32\Debug\libdll_core.a -Wl,--dll -LC:\mingw32\i686-w64-mingw32\lib objCLANGW32\Debug\src\dll_core.o  -o binCLANGW32\Debug\dll_core.dll -m32  -lkernel32 -luser32<br />
+Output file is binCLANGW32\Debug\dll_core.dll with size 51.27 KB<br />
+cmd /c type binCLANGW32\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release CLANG Mingw32 in BUILD_DLL (compiler: LLVM Clang Compiler W32)---------------</b><br />
+clang --version<br />
+(built by Brecht Sanders) clang version 17.0.5<br />
+Target: i686-w64-windows-gnu<br />
+Thread model: posix<br />
+InstalledDir: C:/mingw32/bin<br />
+clang.exe -DNDEBUG -DBUILD_DLL -D_WIN32 -m32 -IC:\mingw32\i686-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objCLANGW32\release\src\dll_core.o<br />
+clang.exe -shared -Wl,--output-def=binCLANGW32\Release\libdll_core.def -Wl,--out-implib=binCLANGW32\Release\libdll_core.a -Wl,--dll -LC:\mingw32\i686-w64-mingw32\lib objCLANGW32\release\src\dll_core.o  -o binCLANGW32\Release\dll_core.dll -m32  -lkernel32 -luser32<br />
+Output file is binCLANGW32\Release\dll_core.dll with size 49.60 KB<br />
+cmd /c type binCLANGW32\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug CLANG Mingw64 in BUILD_DLL (compiler: LLVM Clang Compiler W64)---------------</b><br />
+clang --version<br />
+(built by Brecht Sanders) clang version 17.0.5<br />
+Target: x86_64-w64-windows-gnu<br />
+Thread model: posix<br />
+InstalledDir: C:/mingw64/bin<br />
+clang.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN64 -m64 -IC:\mingw64\x86_64-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objCLANGW64\Debug\src\dll_core.o<br />
+clang.exe -shared -Wl,--output-def=binCLANGW64\Debug\libdll_core.def -Wl,--out-implib=binCLANGW64\Debug\libdll_core.a -Wl,--dll -LC:\mingw64\x86_64-w64-mingw32\lib objCLANGW64\Debug\src\dll_core.o  -o binCLANGW64\Debug\dll_core.dll -m64  -lkernel32 -luser32<br />
+Output file is binCLANGW64\Debug\dll_core.dll with size 55.74 KB<br />
+cmd /c type binCLANGW64\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release CLANG Mingw64 in BUILD_DLL (compiler: LLVM Clang Compiler W64)---------------</b><br />
+clang --version<br />
+(built by Brecht Sanders) clang version 17.0.5<br />
+Target: x86_64-w64-windows-gnu<br />
+Thread model: posix<br />
+InstalledDir: C:/mingw64/bin<br />
+clang.exe -DNDEBUG -DBUILD_DLL -D_WIN64 -m64 -IC:\mingw64\x86_64-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objCLANGW64\Release\src\dll_core.o<br />
+clang.exe -shared -Wl,--output-def=binCLANGW64\Release\libdll_core.def -Wl,--out-implib=binCLANGW64\Release\libdll_core.a -Wl,--dll -LC:\mingw64\x86_64-w64-mingw32\lib objCLANGW64\Release\src\dll_core.o  -o binCLANGW64\Release\dll_core.dll -m64  -lkernel32 -luser32<br />
+Output file is binCLANGW64\Release\dll_core.dll with size 54.10 KB<br />
+cmd /c type binCLANGW64\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug CLANG MSX32 in BUILD_DLL (compiler: LLVM Clang Compiler X32)---------------</b><br />
+clang --version<br />
+clang version 17.0.6<br />
+Target: i686-pc-windows-msvc<br />
+Thread model: posix<br />
+InstalledDir: C:\Program Files (X86)\LLVM\bin<br />
+clang.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN32 -fms-extensions -m32 -I"C:\Program Files (X86)\LLVM\lib\clang\17.0.6\include" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\shared" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\ucrt" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\um" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include" -c C:\src\TestDLL_ALL\src\dll_core.c -o objCLANGX32\Debug\src\dll_core.o<br />
+clang.exe -shared -Wl,--output-def=binCLANGX32\Debug\libdll_core.def -Wl,--out-implib=binCLANGX32\Debug\libdll_core.a -Wl,--dll -L"C:\Program Files (X86)\LLVM\lib\clang\17.0.6\lib\windows" -L"C:\Program Files (X86)\Windows Kits\10\lib\10.0.22621.0\um\x86" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x86" -L"C:\Program Files (X86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x86" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x86\store" objCLANGX32\Debug\src\dll_core.o  -o binCLANGX32\Debug\dll_core.dll -m32  -luser32 -lkernel32<br />
+LINK : warning LNK4044: option '/-output-def=binCLANGX32\Debug\libdll_core.def' non reconnueÿ; ignor‚e<br />
+LINK : warning LNK4044: option '/-out-implib=binCLANGX32\Debug\libdll_core.a' non reconnueÿ; ignor‚e<br />
+LINK : warning LNK4044: option '/-dll' non reconnueÿ; ignor‚e<br />
+   Cr‚ation de la bibliothŠque binCLANGX32\Debug\dll_core.lib et de l'objet binCLANGX32\Debug\dll_core.exp<br />
+Output file is binCLANGX32\Debug\dll_core.dll with size 107.00 KB<br />
+llvm-readobj.exe --coff-exports binCLANGX32\Debug\dll_core.dll<br />
+File: binCLANGX32\Debug\dll_core.dll<br />
+Format: COFF-i386<br />
+Arch: i386<br />
+AddressSize: 32bit<br />
+Export {<br />
+  Ordinal: 1<br />
+  Name: Adddbl<br />
+  RVA: 0x1180<br />
+}<br />
+Export {<br />
+  Ordinal: 2<br />
+  Name: Addint<br />
+  RVA: 0x10C0<br />
+}<br />
+Export {<br />
+  Ordinal: 3<br />
+  Name: Divdbl<br />
+  RVA: 0x1240<br />
+}<br />
+Export {<br />
+  Ordinal: 4<br />
+  Name: Divint<br />
+  RVA: 0x1120<br />
+}<br />
+Export {<br />
+  Ordinal: 5<br />
+  Name: Hello<br />
+  RVA: 0x10A0<br />
+}<br />
+Export {<br />
+  Ordinal: 6<br />
+  Name: Multdbl<br />
+  RVA: 0x1200<br />
+}<br />
+Export {<br />
+  Ordinal: 7<br />
+  Name: Multint<br />
+  RVA: 0x1100<br />
+}<br />
+Export {<br />
+  Ordinal: 8<br />
+  Name: Squardbl<br />
+  RVA: 0x12C0<br />
+}<br />
+Export {<br />
+  Ordinal: 9<br />
+  Name: Squarint<br />
+  RVA: 0x1170<br />
+}<br />
+Export {<br />
+  Ordinal: 10<br />
+  Name: Subdbl<br />
+  RVA: 0x11C0<br />
+}<br />
+Export {<br />
+  Ordinal: 11<br />
+  Name: Subint<br />
+  RVA: 0x10E0<br />
+}<br />
+<b>-------------- Build: Release CLANG MSX32 in BUILD_DLL (compiler: LLVM Clang Compiler X32)---------------</b><br />
+clang --version<br />
+clang version 17.0.6<br />
+Target: i686-pc-windows-msvc<br />
+Thread model: posix<br />
+InstalledDir: C:\Program Files (X86)\LLVM\bin<br />
+clang.exe -DNDEBUG -DBUILD_DLL -D_WIN32 -fms-extensions -m32 -I"C:\Program Files (X86)\LLVM\lib\clang\17.0.6\include" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\shared" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\ucrt" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\um" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include" -c C:\src\TestDLL_ALL\src\dll_core.c -o objCLANGX32\Release\src\dll_core.o<br />
+clang.exe -shared -Wl,--output-def=binCLANGX32\Release\libdll_core.def -Wl,--out-implib=binCLANGX32\Release\libdll_core.a -Wl,--dll -L"C:\Program Files (X86)\LLVM\lib\clang\17.0.6\lib\windows" -L"C:\Program Files (X86)\Windows Kits\10\lib\10.0.22621.0\um\x86" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x86" -L"C:\Program Files (X86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x86" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x86\store" objCLANGX32\Release\src\dll_core.o  -o binCLANGX32\Release\dll_core.dll -m32  -luser32 -lkernel32<br />
+LINK : warning LNK4044: option '/-output-def=binCLANGX32\Release\libdll_core.def' non reconnueÿ; ignor‚e<br />
+LINK : warning LNK4044: option '/-out-implib=binCLANGX32\Release\libdll_core.a' non reconnueÿ; ignor‚e<br />
+LINK : warning LNK4044: option '/-dll' non reconnueÿ; ignor‚e<br />
+   Cr‚ation de la bibliothŠque binCLANGX32\Release\dll_core.lib et de l'objet binCLANGX32\Release\dll_core.exp<br />
+Output file is binCLANGX32\Release\dll_core.dll with size 107.00 KB<br />
+llvm-readobj.exe --coff-exports binCLANGX32\Release\dll_core.dll<br />
+File: binCLANGX32\Release\dll_core.dll<br />
+Format: COFF-i386<br />
+Arch: i386<br />
+AddressSize: 32bit<br />
+Export {<br />
+  Ordinal: 1<br />
+  Name: Adddbl<br />
+  RVA: 0x1180<br />
+}<br />
+Export {<br />
+  Ordinal: 2<br />
+  Name: Addint<br />
+  RVA: 0x10C0<br />
+}<br />
+Export {<br />
+  Ordinal: 3<br />
+  Name: Divdbl<br />
+  RVA: 0x1240<br />
+}<br />
+Export {<br />
+  Ordinal: 4<br />
+  Name: Divint<br />
+  RVA: 0x1120<br />
+}<br />
+Export {<br />
+  Ordinal: 5<br />
+  Name: Hello<br />
+  RVA: 0x10A0<br />
+}<br />
+Export {<br />
+  Ordinal: 6<br />
+  Name: Multdbl<br />
+  RVA: 0x1200<br />
+}<br />
+Export {<br />
+  Ordinal: 7<br />
+  Name: Multint<br />
+  RVA: 0x1100<br />
+}<br />
+Export {<br />
+  Ordinal: 8<br />
+  Name: Squardbl<br />
+  RVA: 0x12C0<br />
+}<br />
+Export {<br />
+  Ordinal: 9<br />
+  Name: Squarint<br />
+  RVA: 0x1170<br />
+}<br />
+Export {<br />
+  Ordinal: 10<br />
+  Name: Subdbl<br />
+  RVA: 0x11C0<br />
+}<br />
+Export {<br />
+  Ordinal: 11<br />
+  Name: Subint<br />
+  RVA: 0x10E0<br />
+}<br />
+<b>-------------- Build: Debug CLANG MSX64 in BUILD_DLL (compiler: LLVM Clang Compiler X64)---------------</b><br />
+clang --version<br />
+clang version 17.0.6<br />
+Target: x86_64-pc-windows-msvc<br />
+Thread model: posix<br />
+InstalledDir: C:\Program Files\LLVM\bin<br />
+clang.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN64 -fms-extensions -m64 -target x86_64-pc-windows-msvc -I"C:\Program Files\LLVM\lib\clang\17.0.6\include" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\shared" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\ucrt" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\um" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include" -c C:\src\TestDLL_ALL\src\dll_core.c -o objCLANGX64\Debug\src\dll_core.o<br />
+clang.exe -shared -Wl,--output-def=binCLANGX64\Debug\libdll_core.def -Wl,--out-implib=binCLANGX64\Debug\libdll_core.a -Wl,--dll -L"C:\Program Files\LLVM\lib\clang\17.0.6\lib\windows" -L"C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64" -L"C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x64" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\store" objCLANGX64\Debug\src\dll_core.o  -o binCLANGX64\Debug\dll_core.dll -m64 -target x86_64-pc-windows-msvc  -luser32 -lkernel32<br />
+LINK : warning LNK4044: option '/-output-def=binCLANGX64\Debug\libdll_core.def' non reconnueÿ; ignor‚e<br />
+LINK : warning LNK4044: option '/-out-implib=binCLANGX64\Debug\libdll_core.a' non reconnueÿ; ignor‚e<br />
+LINK : warning LNK4044: option '/-dll' non reconnueÿ; ignor‚e<br />
+   Cr‚ation de la bibliothŠque binCLANGX64\Debug\dll_core.lib et de l'objet binCLANGX64\Debug\dll_core.exp<br />
+Output file is binCLANGX64\Debug\dll_core.dll with size 136.50 KB<br />
+llvm-readobj.exe --coff-exports binCLANGX64\Debug\dll_core.dll<br />
+File: binCLANGX64\Debug\dll_core.dll<br />
+Format: COFF-x86-64<br />
+Arch: x86_64<br />
+AddressSize: 64bit<br />
+Export {<br />
+  Ordinal: 1<br />
+  Name: Adddbl<br />
+  RVA: 0x1180<br />
+}<br />
+Export {<br />
+  Ordinal: 2<br />
+  Name: Addint<br />
+  RVA: 0x10C0<br />
+}<br />
+Export {<br />
+  Ordinal: 3<br />
+  Name: Divdbl<br />
+  RVA: 0x11E0<br />
+}<br />
+Export {<br />
+  Ordinal: 4<br />
+  Name: Divint<br />
+  RVA: 0x1120<br />
+}<br />
+Export {<br />
+  Ordinal: 5<br />
+  Name: Hello<br />
+  RVA: 0x10A0<br />
+}<br />
+Export {<br />
+  Ordinal: 6<br />
+  Name: Multdbl<br />
+  RVA: 0x11C0<br />
+}<br />
+Export {<br />
+  Ordinal: 7<br />
+  Name: Multint<br />
+  RVA: 0x1100<br />
+}<br />
+Export {<br />
+  Ordinal: 8<br />
+  Name: Squardbl<br />
+  RVA: 0x1250<br />
+}<br />
+Export {<br />
+  Ordinal: 9<br />
+  Name: Squarint<br />
+  RVA: 0x1170<br />
+}<br />
+Export {<br />
+  Ordinal: 10<br />
+  Name: Subdbl<br />
+  RVA: 0x11A0<br />
+}<br />
+Export {<br />
+  Ordinal: 11<br />
+  Name: Subint<br />
+  RVA: 0x10E0<br />
+}<br />
+<b>-------------- Build: Release CLANG MSX64 in BUILD_DLL (compiler: LLVM Clang Compiler X64)---------------</b><br />
+clang --version<br />
+clang version 17.0.6<br />
+Target: x86_64-pc-windows-msvc<br />
+Thread model: posix<br />
+InstalledDir: C:\Program Files\LLVM\bin<br />
+clang.exe -DNDEBUG -DBUILD_DLL -D_WIN64 -fms-extensions -m64 -target x86_64-pc-windows-msvc -I"C:\Program Files\LLVM\lib\clang\17.0.6\include" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\shared" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\ucrt" -I"C:\Program Files (X86)\Windows Kits\10\include\10.0.22621.0\um" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include" -c C:\src\TestDLL_ALL\src\dll_core.c -o objCLANGX64\Release\src\dll_core.o<br />
+clang.exe -shared -Wl,--output-def=binCLANGX64\Release\libdll_core.def -Wl,--out-implib=binCLANGX64\Release\libdll_core.a -Wl,--dll -L"C:\Program Files\LLVM\lib\clang\17.0.6\lib\windows" -L"C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64" -L"C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x64" -L"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\store" objCLANGX64\Release\src\dll_core.o  -o binCLANGX64\Release\dll_core.dll -m64 -target x86_64-pc-windows-msvc  -luser32 -lkernel32<br />
+LINK : warning LNK4044: option '/-output-def=binCLANGX64\Release\libdll_core.def' non reconnueÿ; ignor‚e<br />
+LINK : warning LNK4044: option '/-out-implib=binCLANGX64\Release\libdll_core.a' non reconnueÿ; ignor‚e<br />
+LINK : warning LNK4044: option '/-dll' non reconnueÿ; ignor‚e<br />
+   Cr‚ation de la bibliothŠque binCLANGX64\Release\dll_core.lib et de l'objet binCLANGX64\Release\dll_core.exp<br />
+Output file is binCLANGX64\Release\dll_core.dll with size 136.50 KB<br />
+llvm-readobj.exe --coff-exports binCLANGX64\Release\dll_core.dll<br />
+File: binCLANGX64\Release\dll_core.dll<br />
+Format: COFF-x86-64<br />
+Arch: x86_64<br />
+AddressSize: 64bit<br />
+Export {<br />
+  Ordinal: 1<br />
+  Name: Adddbl<br />
+  RVA: 0x1180<br />
+}<br />
+Export {<br />
+  Ordinal: 2<br />
+  Name: Addint<br />
+  RVA: 0x10C0<br />
+}<br />
+Export {<br />
+  Ordinal: 3<br />
+  Name: Divdbl<br />
+  RVA: 0x11E0<br />
+}<br />
+Export {<br />
+  Ordinal: 4<br />
+  Name: Divint<br />
+  RVA: 0x1120<br />
+}<br />
+Export {<br />
+  Ordinal: 5<br />
+  Name: Hello<br />
+  RVA: 0x10A0<br />
+}<br />
+Export {<br />
+  Ordinal: 6<br />
+  Name: Multdbl<br />
+  RVA: 0x11C0<br />
+}<br />
+Export {<br />
+  Ordinal: 7<br />
+  Name: Multint<br />
+  RVA: 0x1100<br />
+}<br />
+Export {<br />
+  Ordinal: 8<br />
+  Name: Squardbl<br />
+  RVA: 0x1250<br />
+}<br />
+Export {<br />
+  Ordinal: 9<br />
+  Name: Squarint<br />
+  RVA: 0x1170<br />
+}<br />
+Export {<br />
+  Ordinal: 10<br />
+  Name: Subdbl<br />
+  RVA: 0x11A0<br />
+}<br />
+Export {<br />
+  Ordinal: 11<br />
+  Name: Subint<br />
+  RVA: 0x10E0<br />
+}<br />
+<b>-------------- Build: Debug CLANG MSYS W32 in BUILD_DLL (compiler: CLANG MSYS W32 Compiler)---------------</b><br />
+clang --version<br />
+clang version 17.0.6<br />
+Target: i686-w64-windows-gnu<br />
+Thread model: posix<br />
+InstalledDir: C:/msys64/mingw32/bin<br />
+clang.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN32 -m32 -IC:\msys64\mingw32\i686-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objCLANGMW32\Debug\src\dll_core.o<br />
+clang.exe -shared -Wl,--output-def=binCLANGMW32\Debug\libdll_core.def -Wl,--out-implib=binCLANGMW32\Debug\libdll_core.a -Wl,--dll -LC:\msys64\mingw32\i686-w64-mingw32\lib objCLANGMW32\Debug\src\dll_core.o  -o binCLANGMW32\Debug\dll_core.dll -m32  -lkernel32 -luser32<br />
+Output file is binCLANGMW32\Debug\dll_core.dll with size 212.05 KB<br />
+cmd /c type binCLANGMW32\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release CLANG MSYS W32 in BUILD_DLL (compiler: CLANG MSYS W32 Compiler)---------------</b><br />
+clang --version<br />
+clang version 17.0.6<br />
+Target: i686-w64-windows-gnu<br />
+Thread model: posix<br />
+InstalledDir: C:/msys64/mingw32/bin<br />
+clang.exe -DNDEBUG -DBUILD_DLL -D_WIN32 -m32 -IC:\msys64\mingw32\i686-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objCLANGMW32\release\src\dll_core.o<br />
+clang.exe -shared -Wl,--output-def=binCLANGMW32\Release\libdll_core.def -Wl,--out-implib=binCLANGMW32\Release\libdll_core.a -Wl,--dll -LC:\msys64\mingw32\i686-w64-mingw32\lib objCLANGMW32\release\src\dll_core.o  -o binCLANGMW32\Release\dll_core.dll -m32  -lkernel32 -luser32<br />
+Output file is binCLANGMW32\Release\dll_core.dll with size 209.85 KB<br />
+cmd /c type binCLANGMW32\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Debug CLANG MSYS W64 in BUILD_DLL (compiler: CLANG MSYS W64 Compiler)---------------</b><br />
+clang --version<br />
+clang version 17.0.6<br />
+Target: x86_64-w64-windows-gnu<br />
+Thread model: posix<br />
+InstalledDir: C:/msys64/mingw64/bin<br />
+clang.exe -g -D_DEBUG -DDEBUG -DBUILD_DLL -D_WIN64 -m64 -IC:\msys64\mingw64\x86_64-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objCLANGMW64\Debug\src\dll_core.o<br />
+clang.exe -shared -Wl,--output-def=binCLANGMW64\Debug\libdll_core.def -Wl,--out-implib=binCLANGMW64\Debug\libdll_core.a -Wl,--dll -LC:\msys64\mingw64\x86_64-w64-mingw32\lib objCLANGMW64\Debug\src\dll_core.o  -o binCLANGMW64\Debug\dll_core.dll -m64  -lkernel32 -luser32<br />
+Output file is binCLANGMW64\Debug\dll_core.dll with size 217.52 KB<br />
+cmd /c type binCLANGMW64\Debug\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Release CLANG MSYS W64 in BUILD_DLL (compiler: CLANG MSYS W64 Compiler)---------------</b><br />
+clang --version<br />
+clang version 17.0.6<br />
+Target: x86_64-w64-windows-gnu<br />
+Thread model: posix<br />
+InstalledDir: C:/msys64/mingw64/bin<br />
+clang.exe -DNDEBUG -DBUILD_DLL -D_WIN64 -m64 -IC:\msys64\mingw64\x86_64-w64-mingw32\include -c C:\src\TestDLL_ALL\src\dll_core.c -o objCLANGMW64\release\src\dll_core.o<br />
+clang.exe -shared -Wl,--output-def=binCLANGMW64\Release\libdll_core.def -Wl,--out-implib=binCLANGMW64\Release\libdll_core.a -Wl,--dll -LC:\msys64\mingw64\x86_64-w64-mingw32\lib objCLANGMW64\release\src\dll_core.o  -o binCLANGMW64\Release\dll_core.dll -m64  -lkernel32 -luser32<br />
+Output file is binCLANGMW64\Release\dll_core.dll with size 214.88 KB<br />
+cmd /c type binCLANGMW64\Release\libdll_core.def<br />
+EXPORTS<br />
+    Adddbl @1<br />
+    Addint @2<br />
+    Divdbl @3<br />
+    Divint @4<br />
+    Hello @5<br />
+    Multdbl @6<br />
+    Multint @7<br />
+    Squardbl @8<br />
+    Squarint @9<br />
+    Subdbl @10<br />
+    Subint @11<br />
+<b>-------------- Build: Archive in BUILD_DLL (compiler: GNU GCC Compiler)---------------</b><br />
+cmd /c del *.7z<br />
+cmd /c del *.tar<br />
+Impossible de trouver C:\src\TestDLL_ALL\*.tar<br />
+"C:\Program Files\Python312\python.exe" ..\tools\Size_dll.py dll_core<br />
+Tableau récapitulatif de la taille des DLL générées pour le projet : dll_core.<br />
+  Debug Borland C/C++ :      4.5 KB<br />
+  Release Borland C/C++ :    4.5 KB<br />
+  Debug CLANG MSYS W32 :     212.1 KB<br />
+  Release CLANG MSYS W32 :   209.8 KB<br />
+  Debug CLANG MSYS W64 :     217.5 KB<br />
+  Release CLANG MSYS W64 :   214.9 KB<br />
+  Debug CLANG Mingw32 :      51.3 KB<br />
+  Release CLANG Mingw32 :    49.6 KB<br />
+  Debug CLANG Mingw64 :      55.7 KB<br />
+  Release CLANG Mingw64 :    54.1 KB<br />
+  Debug CLANG VS2022 32 :    107.0 KB<br />
+  Release CLANG VS2022 32 :  107.0 KB<br />
+  Debug CLANG VS2022 64 :    136.5 KB<br />
+  Release CLANG VS2022 64 :  136.5 KB<br />
+  Debug Cygwin 32 :          216.5 KB<br />
+  Release Cygwin 32 :        213.3 KB<br />
+  Debug Cygwin 64 :          228.1 KB<br />
+  Release Cygwin 64 :        225.4 KB<br />
+  Debug Mingw64 CPP :        69.9 KB<br />
+  Release Mingw64 CPP :      36.0 KB<br />
+  Debug DMC 32 :             30.0 KB<br />
+  Release DMC 32 :           30.0 KB<br />
+  Debug lcc 32 :             103.0 KB<br />
+  Release lcc 32 :           99.0 KB<br />
+  Debug lcc 64 :             173.8 KB<br />
+  Release lcc 64 :           169.8 KB<br />
+  Debug Mingw32 officiel :   37.2 KB<br />
+  Release Mingw32 officiel : 11.0 KB<br />
+  Debug Mingw32 WinLibs :    51.5 KB<br />
+  Release Mingw32 WinLibs :  49.8 KB<br />
+  Debug Mingw64 WinLibs :    57.0 KB<br />
+  Release Mingw64 WinLibs :  19.5 KB<br />
+  Debug Mingw64 CB :         52.8 KB<br />
+  Release Mingw64 CB :       19.0 KB<br />
+  Debug Mingw32 MSYS2 :      212.6 KB<br />
+  Release Mingw32 MSYS2 :    43.5 KB<br />
+  Debug Mingw64 MSYS2 :      218.1 KB<br />
+  Release Mingw64 MSYS2 :    38.5 KB<br />
+  Debug OpenWatcom 32 :      52.3 KB<br />
+  Release OpenWatcom 32 :    33.0 KB<br />
+  Debug Pelles C 32 :        47.5 KB<br />
+  Release Pelles C 32 :      32.5 KB<br />
+  Debug Pelles C 64 :        54.0 KB<br />
+  Release Pelles C 64 :      39.0 KB<br />
+  Debug TDM Mingw32 :        157.2 KB<br />
+  Release TDM Mingw32 :      96.0 KB<br />
+  Debug TDM Mingw64 :        264.7 KB<br />
+  Release TDM Mingw64 :      37.0 KB<br />
+  Debug VS 2022 32 :         474.5 KB<br />
+  Release VS 2022 32 :       106.5 KB<br />
+  Debug VS 2022 64 :         630.5 KB<br />
+  Release VS 2022 64 :       136.0 KB<br />
+"C:\Program Files\Python312\python.exe" ..\tools\Calc_checksums_dll.py dll_core<br />
+Tableau récapitulatif des différents checksums générés pour le projet : dll_core<br />
+Calcul des cheksums du fichier : .\binBC55\Debug\dll_core.dll.<br />
+Checksum CRC32  is f2f81db6.<br />
+Checksum MD5 is 61f70335d3679675e50036c3db9af505.<br />
+Checksum SHA256 is 5454dc347fe577c43949ee892d7e51d3ce8f8c47f6a5465426116f0197b1021b.<br />
+Checksum SHA512 is dfab4065084250b110e755ecc24a54ee6b93e46d5fa45318f696a51ce86550fe57b2e571b39046a2925103875dc1e0daa52b2c68fe0ceace2c55dc80842a62a7.<br />
+Checksum RipeMD160 is ba829f73221e6396bc0c7b24337c422777f1cc9c.<br />
+Checksum BLAKE2B is 14a49169b67354ddd3534e34ed9682ef10ff5c12ea350168d2a83eff857993c95042a9f5483484408404030e818cb15f2a2dfa0e621e9c8e685df094825ece0e.<br />
+Calcul des cheksums du fichier : .\binBC55\Release\dll_core.dll.<br />
+Checksum CRC32  is 1086b1f5.<br />
+Checksum MD5 is 72e6dad3c67fad1e53701ec384bde48f.<br />
+Checksum SHA256 is 63a825d3791d7f99751150bf7fb70d856acfc68c3d1804d60ecfd1d31056deca.<br />
+Checksum SHA512 is ee09fc6b373b0e560794e91bab422ef93ad1ec4445c4dc769f676cf706fb7ce31c6679063ac10dd900c28e9e751c574aed4b74fa94b2ada9dba24e236a603183.<br />
+Checksum RipeMD160 is 4055606e09e150e828c387918920224c1f6b3118.<br />
+Checksum BLAKE2B is f9d75ff2fc47758e97f3030a1be22c77784060c4de1a7ba9f8e36b22b4b4517fe3b2592bf3eef5f561ad08dd2dff78b60ecb2af08cfe0adb653e93becf624836.<br />
+Calcul des cheksums du fichier : .\binCLANGMW32\Debug\dll_core.dll.<br />
+Checksum CRC32  is b2719328.<br />
+Checksum MD5 is b058c74d83356809bdb093cc906751af.<br />
+Checksum SHA256 is 23be1d2179eed76cc1c2cbcbb4225dfa0a2f4c6b00f3ee4314af2900cd6a22ca.<br />
+Checksum SHA512 is d3f6c57ea39adb30248a7c35ee18f149f72017e9f8228eb34062b152ba23b29f3ffa6d9e7ca2e9bb9223344f9c6408a9b7f62fc6a709443372c74b0b8bcae14b.<br />
+Checksum RipeMD160 is 447394996b339fa64c17fe1f0780c41eafd527bd.<br />
+Checksum BLAKE2B is 9f6a11db514df8bf3411305643ab7d7e9ad98847d1aaee3ed9b887ffeb16a595cd05e6260176b005d2182b3fd011b39c3dbe943857a4d743f058cb3d90cf6125.<br />
+Calcul des cheksums du fichier : .\binCLANGMW32\Release\dll_core.dll.<br />
+Checksum CRC32  is b0ef9073.<br />
+Checksum MD5 is ae2e313e53150dca78153720c0ca76ef.<br />
+Checksum SHA256 is 4e6e23b50a42288d297c0b11015d8b93496defa94527b57e375bced6f4f96f84.<br />
+Checksum SHA512 is 3d2e773ea33cc58a1e38166abd229a0851c143706b0f8d5bf1b45ebe975a9f41af4922f497352fa4abd7213a69443b81e360587da71d921410bba9334af75afc.<br />
+Checksum RipeMD160 is 5b5be32f652e2dc7b4d6aa11dfff003a29b29e36.<br />
+Checksum BLAKE2B is 5dbf29d5c1e6d30cff14af64e8a4c1d87803a6568685d3411c47af53dfe926bfe3c220ecc4930f494589b1c7fff42b3281dc43c09df61848c791cd4f8328ea61.<br />
+Calcul des cheksums du fichier : .\binCLANGMW64\Debug\dll_core.dll.<br />
+Checksum CRC32  is 7d5ffd5b.<br />
+Checksum MD5 is b7cf19694664bc465c9e4fcee3df20da.<br />
+Checksum SHA256 is 9ac0f6aad61a1f487521e168a5fbce3f7922931e8dfc72b03c7e3d761f5e7339.<br />
+Checksum SHA512 is a0108f186b85e5c57dc469c17dc2964db9f7e2b741399a7da902c410bcf1da234c05f28b67b5de4150df5730230fd759456e457f6052276918c04fa8c354c442.<br />
+Checksum RipeMD160 is 12b95635d0f3e9d6d47933e12c6520b43c88e9da.<br />
+Checksum BLAKE2B is 1fe7e112e17961f5a1883028166d4f0bed096aff606a06bff1956983608ef34574233268a09219b6327c1899942de853faa2bb599b0eb9f6c49d1fb5e766bda2.<br />
+Calcul des cheksums du fichier : .\binCLANGMW64\Release\dll_core.dll.<br />
+Checksum CRC32  is d164f9b0.<br />
+Checksum MD5 is 1e7bd4e703c88463ee2c9f36d8bad04a.<br />
+Checksum SHA256 is fab1d7f46cb8fbf38f459c9bc49714a4066264a075095b3b0cd3fb975bbec3fa.<br />
+Checksum SHA512 is 809b351a10b43fcef9f3eac839e2960dcf351dc14efe92ddfef9684ede8e1e73b597e614dc2240f41af5edfb41ee1d7494f8ec7f0c0db22535cdf2486f44f79d.<br />
+Checksum RipeMD160 is f96e30a1767311d2973e8951e040ccf75ff0be26.<br />
+Checksum BLAKE2B is 5c8be719b97786c0498d6d2a9159e31bdd0c6b8f50f561c29265c60c54e481aa991a165eb5f1d4b63eb085f2d4372560fea9b42b4a6d6ea624d29e9a96eb7fc3.<br />
+Calcul des cheksums du fichier : .\binCLANGW32\Debug\dll_core.dll.<br />
+Checksum CRC32  is 613b9de3.<br />
+Checksum MD5 is 1f2421400c4ee4b21aba845bab0ca0de.<br />
+Checksum SHA256 is ad1ffa84abc7ee1a09f77e83be24a21436938c2fc703f1202bf1ab86b436ffd0.<br />
+Checksum SHA512 is 0844fdfb091bd8fe5fd1051a6695578d40ba53ef7535d7e350716044ed34c4f608e5028eab4c25d7f8f8c0908ba8fa8aa351dcb2cf25fc77bbcc2067e3adbf69.<br />
+Checksum RipeMD160 is cbc759375d49a4814a76a006fa781d97c7061f77.<br />
+Checksum BLAKE2B is 7bf64e5c11908fac59d21b64b273f83fd9681be3e3ffa7e1c29971acc244c0b01a27ab8c0f3e117be58cc21da208096c495a9b93eb9d741e653d7a7519afbc81.<br />
+Calcul des cheksums du fichier : .\binCLANGW32\Release\dll_core.dll.<br />
+Checksum CRC32  is 8fb54693.<br />
+Checksum MD5 is 54a29b2d2b8ac78155eace562fe5536d.<br />
+Checksum SHA256 is f085ade157288cc77f93310a482e2dbcb74a35a0cfde6fab79c41cd8d08b729e.<br />
+Checksum SHA512 is 8a2e13967549890b0c189ff027b64aabf3059fa6135fc1bed2ad827f8db667a8d2545e8841689d34a8d2abba11dab5db53b92d2825eddcd346f180d30a6334b4.<br />
+Checksum RipeMD160 is 335d14f03b4daae6ba9d9a5b73cf44a38b160fa4.<br />
+Checksum BLAKE2B is 425fa0aea79c438cbd6fd1a5ff5e4f7d21476e4560a01ebe88d619b0fc0470c7dea85d7b6eebb95a84480d77359031fa7b1d6b0009a22ca9ba14afd83a0f9c6c.<br />
+Calcul des cheksums du fichier : .\binCLANGW64\Debug\dll_core.dll.<br />
+Checksum CRC32  is cbf38831.<br />
+Checksum MD5 is d1a76321fd0f0d4c1520cc1db231beba.<br />
+Checksum SHA256 is e79ede6a260c8628428f316d073c76805ea089f1135d26d8203bd914f5d1bfb0.<br />
+Checksum SHA512 is 23326b9d6ecff84d43c7dbf4cb5f9207e8306cc3b8e1f9dfda7698b1601223ce9622da73e7eaea5e77cb091ae52b2d7a4f82dd68a09b9bd0e5ab53e4abb79469.<br />
+Checksum RipeMD160 is a1793c0a2af3ad2bd947f8c382991196344c2d8e.<br />
+Checksum BLAKE2B is be1926969cb22f877d6193c44a37ee858a9329fe0d5a45b9a21dd86bdb0118c6575b8f9bd18b3fd5be89856057bae3e1aa1ec7611e59103d285c132509ef5e39.<br />
+Calcul des cheksums du fichier : .\binCLANGW64\Release\dll_core.dll.<br />
+Checksum CRC32  is 7a8b110d.<br />
+Checksum MD5 is 69b9dd7c07d6b2c44f3333e1ac94d9a5.<br />
+Checksum SHA256 is b8b734fe85d89a2fdf341560179c9793df0fb5f1593124d7af81ece5f819f560.<br />
+Checksum SHA512 is d8cf96c41406b7a4a9166d95cabb26a4fe1c3985c6388715fa6b1f1b97a578acd6a05124385d076264b97a7a1d8450c5d64b0b5477fae361f0754ad9f335fee5.<br />
+Checksum RipeMD160 is 438c81f2c060257dc5e9e8cadd28eff64f88b39e.<br />
+Checksum BLAKE2B is 29e625fc522e4a61b6e115267ba50144b7a6f275b1f761234faf87f09d5cd0d990bdcac8fff03743fd6c6ab3c18e335659a878f6a73beae186a5b180d16cc5df.<br />
+Calcul des cheksums du fichier : .\binCLANGX32\Debug\dll_core.dll.<br />
+Checksum CRC32  is e38f95a5.<br />
+Checksum MD5 is d04b2f95396eb5b34d219651c341f84c.<br />
+Checksum SHA256 is 8c5750a4449e37f0e3890b873d418b10ac6838078fde5a48ae709521abddc875.<br />
+Checksum SHA512 is 2af0dfc7a2b8819623bba023c0859c428b4c31a4f4e5b7cb9a934377b21bd3d1beaf74fa843be540730024ee161d24b9a4ecfb58f746e67c443e1cbafd511211.<br />
+Checksum RipeMD160 is ec031501f36fbc59b4a8dd0eea8a8469ee62e788.<br />
+Checksum BLAKE2B is 4243aac788d5c4dab015e9a5fca858c44e336eda599f59100d8bc033c8cb5ad6018de289a82deb3a516f89ca48038c4e73be7c2606da5c0e27974115df104b3f.<br />
+Calcul des cheksums du fichier : .\binCLANGX32\Release\dll_core.dll.<br />
+Checksum CRC32  is 499c28c1.<br />
+Checksum MD5 is 1529e9f5964e07ef5849f86fa70fb68a.<br />
+Checksum SHA256 is f84043ba25524639270d0ab9fe6a07d440c4d0805181026c958f3d20114a3ff3.<br />
+Checksum SHA512 is eeefc0850c3e7aca40a48e0aa5b765e36d3f7a3982b3e18c61a5430791ed0ab6e4033d7326512f51658a1c7bc315a55e593f272906f47328757c76e0e3dcad40.<br />
+Checksum RipeMD160 is eee2a833d9171a6aa7aefc1817c7aa40f25b28b4.<br />
+Checksum BLAKE2B is 0735b03ec5deaeeb0cdc39f67337fe394675d422bd41dd008499493ba95eb78b0ebfcc6886790143fac5d5a49e2c51927ba7f082adc3373f844d49be55d2014c.<br />
+Calcul des cheksums du fichier : .\binCLANGX64\Debug\dll_core.dll.<br />
+Checksum CRC32  is a2927fdf.<br />
+Checksum MD5 is 2bf999acc2226e0e07a273d4b1f32610.<br />
+Checksum SHA256 is 691e17351ec447a41f42c0fa3d1112cb568a4cfc66dbb87b100eb189863108ce.<br />
+Checksum SHA512 is 06b35b53e17b0cb1f36936d45a912d4451960e707421a9dc0b0c4455f2bc343c0ff1e6db1d62a1a114b7a7dda4fa87c502512ba126a325350e1ade9b0e5c758c.<br />
+Checksum RipeMD160 is 938da09d4c78f96e842b313db48510898eb53ac2.<br />
+Checksum BLAKE2B is 4a7cd8a254662ed1f6b82cf8cbc1e1480abb71793b396568430877d303f73fc67f60812c6b04f786eb29b1ed1b39ca466b04002a70b89799297a3d705077b354.<br />
+Calcul des cheksums du fichier : .\binCLANGX64\Release\dll_core.dll.<br />
+Checksum CRC32  is 5c2aea45.<br />
+Checksum MD5 is 13b58ae5791551f1bb887f22a9fdf6a1.<br />
+Checksum SHA256 is 0e22d62abd26c70d819a6497c261fcec013acd6c9fb8c12933f4a40cf4e087ff.<br />
+Checksum SHA512 is 32590d07bcf7663299b2a3ceb37435cf1de0399904710bacbb5190fa6e03e0e051b0d6413e51577050b9219b16fb5781b0aea0f71f8dfaf38246254607ea8e07.<br />
+Checksum RipeMD160 is aa22ae97b91f9915dd2f3ac68117da8b7116308e.<br />
+Checksum BLAKE2B is 25eed7fe6d820177118e466a6049a8247df5022e70afaf4b61247969bcf813185feb2094c29b78d0b008442fcf969e932b8806e97a36f75a56e059720cffc4b8.<br />
+Calcul des cheksums du fichier : .\binCYGWIN32\Debug\dll_core.dll.<br />
+Checksum CRC32  is 5f815704.<br />
+Checksum MD5 is c2ae58908f2892ac3e9cd6eea9ac5c82.<br />
+Checksum SHA256 is 009d17cb6a72ef37287c685312d8bbc9e3dcc1f22174d8d19bb53c023c3596ed.<br />
+Checksum SHA512 is a83051b3b735d885c0afb1497ebe0aad8f56987545af33cd2d7ac2721ab4bdb7e8fb36f48df0b965becafaac841124f0506cd3bd553fab6de9b49c8e68826da9.<br />
+Checksum RipeMD160 is caab47da56fff6835ddb3a3eb3674c19e722873e.<br />
+Checksum BLAKE2B is 9c603923a79f5e6d2f89aa0d5a32d9b9eec1edae816c695dea95585851395e63a5b5209d8aa71dfcf7388478fe7c05b550d701188b71495aa749e6373bef37fc.<br />
+Calcul des cheksums du fichier : .\binCYGWIN32\Release\dll_core.dll.<br />
+Checksum CRC32  is 31cc9f72.<br />
+Checksum MD5 is ed722b88e5d1a4a071ab1fa3085ed182.<br />
+Checksum SHA256 is 1bb0709ab3aaa5965e9eb7d5126602acb0a1820442432c01661465bf976dfbf9.<br />
+Checksum SHA512 is 7c46e6727b900e1da1a83bf307a24fb7e873d818ea240eb9d4bb19767c5694978c42eab7dc559dd2457c6b3ced539d157c4c1549d95cbdfdb6d229681fc2bd93.<br />
+Checksum RipeMD160 is c5af865a2798c00f2ed288368377fff7fbaafefe.<br />
+Checksum BLAKE2B is 598e7151d4aeee54d42736bd1b15f37652d895b13bc4e47438133c6b2af0046828e7d644932865d5110439718044710ee51591479076419d5e02f515f15fc70a.<br />
+Calcul des cheksums du fichier : .\binCYGWIN64\Debug\dll_core.dll.<br />
+Checksum CRC32  is c68fdd65.<br />
+Checksum MD5 is 0b602c8d81df98c588310a39b2eca73e.<br />
+Checksum SHA256 is 2a7984d8f853c1ec4b695b205a19aafcb473fae9aa5ae6ca66a4d8ed8387f41f.<br />
+Checksum SHA512 is af9170f0505e03ce5feafe993551150a208e17de24048ff0dd28677afec408391224b25e0930b544a1ae926cef7ec0a97ee8ca2d16b18a699ce40f226e8d81a7.<br />
+Checksum RipeMD160 is b7699110ffb48e91b398ad43acf3580c44dd90ba.<br />
+Checksum BLAKE2B is eacb858c64df428a1b9136639e13b0886f9da70578e0a39789b9d1ec3d149fd8d40789830f4f5bd74a8a50abb4d6f4653a8cee0a90734bb28c5c53b072657442.<br />
+Calcul des cheksums du fichier : .\binCYGWIN64\Release\dll_core.dll.<br />
+Checksum CRC32  is a60baa6b.<br />
+Checksum MD5 is 7ebf8e74c44775ea9b12d48ded7c95c7.<br />
+Checksum SHA256 is b0188332c0ef005995d970ca099df7561598ac8980291a635968bb6a1ff48664.<br />
+Checksum SHA512 is 08558c07057f611883f985256d906f41fe8a0c324100b3d078ed160a3bb3e44e04f64a2997deb66bd2cc4541a6fa8415806d35bbd66a0b7c85a17f4fa1a3110d.<br />
+Checksum RipeMD160 is e19233f765eec78b2e41d3ba14f1e99be391147f.<br />
+Checksum BLAKE2B is 4f2bd4005cc87725360a1b513781cc86c372025775b6de66c7b7652a9119b1e6f03e73d48486a28ae2e3ce67522a6673766c3c20c8f9114e1ad47bc64b123c43.<br />
+Calcul des cheksums du fichier : .\binDevCpp\Debug\dll_core.dll.<br />
+Checksum CRC32  is b817d5d1.<br />
+Checksum MD5 is 6309b08f3c1cda1faf523d8d3206f19e.<br />
+Checksum SHA256 is 4929b3f6326159fcb7afaefa542954563c29bc82d8e6942fa02bd8c05a066d15.<br />
+Checksum SHA512 is d660bba9616b535f2a3c3ffc67fe74476ff7eb3f6553e45ec173fe850ec07e78d376ddd5f83d05ebd9a9a3c5521fba8edbba5e2afadd1c133d4e0293411d8445.<br />
+Checksum RipeMD160 is 159d81c937c2b2282062f0fc6b20085a8259290c.<br />
+Checksum BLAKE2B is bef88d5b2630982a49b414e7bdc4cb7156c53d90a10a365a19ffbe98b15dac0d0af149ae49a1c06c94710dec69b9ab1df531b06c3e2b55dd6413389e470a692c.<br />
+Calcul des cheksums du fichier : .\binDevCpp\Release\dll_core.dll.<br />
+Checksum CRC32  is d16a84d1.<br />
+Checksum MD5 is c80ce1c933056c79827c439e1d8f468e.<br />
+Checksum SHA256 is 9c640244f85a75f5d1996bed7969dec6be418cf9edcd70890eb12583733f6b57.<br />
+Checksum SHA512 is dea0ab576e1dbe1b10074c17667ad6ede891dcdb3a65176cd858c8882c349b3cbd2fd8b7be50bfda80ab1b2b41e3410e27c5d8bc17b4b36365c9ac14a8ef4823.<br />
+Checksum RipeMD160 is 93781c554c8391e5c1f71702212ee1d13ba16795.<br />
+Checksum BLAKE2B is 12ba5b56b91772eb32d5e40930631835300643dd65d21a1ebcf74e3d865dccbd7056213af4298b04ba7279e303042a399fb2ef14bfdcb4f682bf019fefd12ba2.<br />
+Calcul des cheksums du fichier : .\binDMC\Debug\dll_core.dll.<br />
+Checksum CRC32  is 4fa14c47.<br />
+Checksum MD5 is e62d92a58253447a0a07b89ad6149559.<br />
+Checksum SHA256 is 391a81d0d3efd0808e32aec4438bfcb3847f76c0efdcd74c16c8af1d217c042d.<br />
+Checksum SHA512 is 3e32b89cc0250a40c3998719758ee7f081bcfeef4efe5ea9a38f6a2fef9292742cbf8fb3a2cef219cbd7faf597f7fc22efb4fa0e4a4daa41e464e8ab484b112e.<br />
+Checksum RipeMD160 is 280a908aeedbf486c7a79c666ddfc9c9ec2a808f.<br />
+Checksum BLAKE2B is 14d843dc5e48269fc38c355cdef62ca859f622df9f2aaa224a457e024bb912aa93e4c39feec62a6cfea10bd0f6954cacf07e1ddfa5b04aae4d7b49a38e6f5f97.<br />
+Calcul des cheksums du fichier : .\binDMC\Release\dll_core.dll.<br />
+Checksum CRC32  is bc9b3310.<br />
+Checksum MD5 is 76110744ec5e0141ee7bc16251bcb923.<br />
+Checksum SHA256 is 8b67517b0360abad2ae8325cb96d5e67e5514802e2b2facda55f197170d7567d.<br />
+Checksum SHA512 is d9bab760b5a66f20581b7a229a9bde8ae93e05afbc58aac5f2dacde85105d78b8c530dbcd8f5dec386637b85607d2a26b401f03af250093f977bd06aa1381d54.<br />
+Checksum RipeMD160 is 866d4796cd66a2ccd287bdcca935e6333728abe0.<br />
+Checksum BLAKE2B is 953ad4f7215def5101c15ae48d4b6d329c0bbd50fba5dcb8cf400a328afa3fee0ab5bc74d98085ba729a7377091569a75ae1a2cbea595d8415c404d2b4d3bbdf.<br />
+Calcul des cheksums du fichier : .\binlcc32\Debug\dll_core.dll.<br />
+Checksum CRC32  is 8ae903a4.<br />
+Checksum MD5 is 1b8e2845bc85d243618df59e2cfeb6c7.<br />
+Checksum SHA256 is 74ff47c53ba96358092fde172e9080d898a0660b4aed8eb4ae0c2c5ba77d49f4.<br />
+Checksum SHA512 is 13312942bf6867f47eee6ad28e952f21b1424246cfaeef25d8a2f68bed656d11d4ea024718829ed16c5922513d12f2e0365802bc4183087a7ac710d4257926cb.<br />
+Checksum RipeMD160 is 1770723f925f2d8c9c890ec79a953d83e12ea047.<br />
+Checksum BLAKE2B is 022344cbc3b57c62beb71d3016443c968e6318d4de2390b4239c57325f8661315b5c545f804fc8bab2017d54b16bc86ccbeef02d97cc70379e3b54f97371a5d9.<br />
+Calcul des cheksums du fichier : .\binlcc32\Release\dll_core.dll.<br />
+Checksum CRC32  is da0060ef.<br />
+Checksum MD5 is de3493b122278030fd6ffd3a39b37f79.<br />
+Checksum SHA256 is b115b6865eec99029197daa1e3344eb6ce4ac2426cb30a91b388fa7c45ffecb0.<br />
+Checksum SHA512 is a4fe9d33cf3b06a7c3415b01a1d65047c61a393332d54b8cf5c4da5fffa7f2bfc4e815c13773c58c20f14611e7dedb92e7694d59dd2c4314f2ead265e2d95126.<br />
+Checksum RipeMD160 is 32a856719fbed283f741ad2604c64a965b9f40e7.<br />
+Checksum BLAKE2B is 5af644fb433c5c2ba1a2d3155d7ab7a0b6b048fbc4ba8c782b68f7e35d5d782470323f695641e2901ac839d50ab832504e8a9efd8d2d8aa12879058a85a61b9f.<br />
+Calcul des cheksums du fichier : .\binlcc64\Debug\dll_core.dll.<br />
+Checksum CRC32  is 9512199f.<br />
+Checksum MD5 is 91b22d7fffab0ff4f5acbe01b26fe7b2.<br />
+Checksum SHA256 is e6b612a68441587d15a265e0516d4243a01db96ee3b1c774bda18b72c12a067e.<br />
+Checksum SHA512 is a49d94355edd2042a17b9a92f5f3105eb5aefec3f88486c6c5dc8fa6aecbbb37d67b0b8c46dbcdafb4405984db682f8a06df647b87385f919a50ecb83c7c3a59.<br />
+Checksum RipeMD160 is 7f05c6541e773a6c545250c952677c4c42755530.<br />
+Checksum BLAKE2B is 4d6a763cff490b326d91f57dca46deede76e5e2698584f03d9947d32b4cd17376e5f5776eb1e1976de2c4c0a24cd44aa6339837db20a1d75526facbfafdec605.<br />
+Calcul des cheksums du fichier : .\binlcc64\Release\dll_core.dll.<br />
+Checksum CRC32  is cced5c2b.<br />
+Checksum MD5 is 6e0f98c2d89e8d265556129ef49b9057.<br />
+Checksum SHA256 is a33c5dd24d487de9d4bbe34a5570f308ab3de4b6361fb1bda74a47ac648889aa.<br />
+Checksum SHA512 is 6dcce92bdca1704947878fa6acc8d40ad359ba5c23a7261d64aed8ea7b337c4830669d4ebbcd2cd3b2fb617e9f200c0ae3dcc5b30aacf7cd9540e0b2242c8082.<br />
+Checksum RipeMD160 is 3652d001931fcae8beff8935b30213d8b0730c07.<br />
+Checksum BLAKE2B is 34e1a5dc28820ef948599326302061afceb08b70dbc71c97e665f8e7e65daf01a620406c55fef573648fecba25069b7d34f209ad390951184e9cf14e58b3dd5b.<br />
+Calcul des cheksums du fichier : .\binMingw32of\Debug\dll_core.dll.<br />
+Checksum CRC32  is 52476da.<br />
+Checksum MD5 is 37412e28c5c698414b77e47401e85bbe.<br />
+Checksum SHA256 is 5e92de86eb5a31abdf425fce3b66379a5ae0bc0716c0e41cb8b0242a8cedda91.<br />
+Checksum SHA512 is ee25b4201b6022006d9465b423b7401d89264f2c140acb2e6ab918e98d07cc8595ced54b9fff6d3d8594b02fb6001a4c156048e8e7d00038d5bc056514847d6b.<br />
+Checksum RipeMD160 is 8a98dd0e1bcd78528e01b26951d89d7a5885bef4.<br />
+Checksum BLAKE2B is 3ff59fd9432c69a8a539850d2876c6d89f72869c3f3d4d3e6587e34422469633bd0189796941af99b08adf16ede5ea6596d2208c3e06dd435e5daf611d3540d7.<br />
+Calcul des cheksums du fichier : .\binMingw32of\Release\dll_core.dll.<br />
+Checksum CRC32  is 9d901f8a.<br />
+Checksum MD5 is fc507f8bec8b4232a393265c551705de.<br />
+Checksum SHA256 is 3b159190c2cfeeed606da8038d34f6730232bef090a381a8a4e1275e4130da01.<br />
+Checksum SHA512 is e33b67eaa5987d0021e658a060b7210c1272935314b688e394ed45b25a631058e57462a7abac93322b469cfe1e4027018f3d8e66304abe1a4438c6b460ff9778.<br />
+Checksum RipeMD160 is 0ec77ba913eedea400a9a4fb148776cbe4929114.<br />
+Checksum BLAKE2B is 1ff500165af94d4d9d314dbc4bdeaac5ffcfa24eb3dfcf974752d921308fab2bfad4780b825880f1ddf5eb0bdb41a1afb9293c03e2932571ca2a3e558eaca9bb.<br />
+Calcul des cheksums du fichier : .\binMingw32wl\Debug\dll_core.dll.<br />
+Checksum CRC32  is c1f8a70d.<br />
+Checksum MD5 is e394b20113b53f85fd3535f97081acae.<br />
+Checksum SHA256 is 70df427ac1a6218fce98be496860d7fa6092652db9178d260bf20f4d68688814.<br />
+Checksum SHA512 is 5d5daef413334946ca6a550a779225d1f224e44e4c0b06b614e8cab03ee6b71a3c7e1d6f81d4aef09a491b4f5d991c88dda3b80f3f33a3559ba334b4fb0f4d93.<br />
+Checksum RipeMD160 is e0582ee95c4c69635148ab6225b460e59c5b3385.<br />
+Checksum BLAKE2B is 2f4febd6d1ac52172f603edd714729f29e052d2ec2cd3d8b326872f72217ca800cecdae763c79ba0100bddf30bbce9f22616b9d9e18221e366cba819596a96c2.<br />
+Calcul des cheksums du fichier : .\binMingw32wl\Release\dll_core.dll.<br />
+Checksum CRC32  is 78c49f2c.<br />
+Checksum MD5 is cfe76aad9c9f660746c42af87f7c171a.<br />
+Checksum SHA256 is 037b47f6f436d4f08681b06459197ad270cfe7f60cf6b410d051c2a4fb5bb638.<br />
+Checksum SHA512 is ccb8cb4ec448a7ce7f5f852a92bf01244836c4c7ce9ac0a42c3a4457d15b888fce581d6448677faa5fd5a29206021bb3c2dd966f130b6bd491bd1e4929458137.<br />
+Checksum RipeMD160 is 36d2eff77f7918ffd3b4151824b6fc67665bd17b.<br />
+Checksum BLAKE2B is 0e7d968ee3a68144095fc56e2082c09a962a10581d5b72d5745672cf2a8bd34a773d8cc5ed32327a83b1538e09a496ab124939f9319a958834ebbb8f1c956a14.<br />
+Calcul des cheksums du fichier : .\binMingw64wl\Debug\dll_core.dll.<br />
+Checksum CRC32  is 5d788750.<br />
+Checksum MD5 is 8bc82c35a270d05e40a9b0b42108c20f.<br />
+Checksum SHA256 is 52b87545276de5e37e61080b96840e6f7965b6f3b9062fb32ef886071984e701.<br />
+Checksum SHA512 is b24303c6911101b01eb374177115a1e1a4c3e39d781664d9138512ba247988e65a6b51eb9fcd316d0fe3b17e9d944c912c8bcd076ab3e176bc9d0a99aa61c545.<br />
+Checksum RipeMD160 is 92497fdc674bfe12fe30abd1a7350358f2bbe068.<br />
+Checksum BLAKE2B is 331d0bd1a430abb8ecde418f73fbdd6e8ddd1115655d627832f6ceecfb87c0974e7a4fbfef6c718b26dc88b8e40c8c50ee603ad052ec880ec20cd5d87968182c.<br />
+Calcul des cheksums du fichier : .\binMingw64wl\Release\dll_core.dll.<br />
+Checksum CRC32  is d3e64425.<br />
+Checksum MD5 is 7e1f1611188b8756e98cc6b702894207.<br />
+Checksum SHA256 is f1625561d67731dde37ed54da2903c2b15f245c3774c3b55c2cba48a300fae4f.<br />
+Checksum SHA512 is 9cb9a1693f3ad69a900f44beb27125994d5c4e3f52ad11194383112e27ff853a7a9d4762cc5d208abfdb822afd98882c70e4d4c9ce0893d86d1d2ee14c45b559.<br />
+Checksum RipeMD160 is b75c1f8318d15facf8f6bb9f88fde77bad598bd5.<br />
+Checksum BLAKE2B is fb6dabf7c60cef42859ca1b207846e1c8b7d75abb9ef497d3676fc4600ae574b8e37e49076a69122253b2c6d1cb5ada0e783bd5754177f908c8e838e6b764aef.<br />
+Calcul des cheksums du fichier : .\binMingw64CB\Debug\dll_core.dll.<br />
+Checksum CRC32  is dadb2876.<br />
+Checksum MD5 is a462e3ecad69c1ed056d665b65710964.<br />
+Checksum SHA256 is db1b52a927abfbb69d7667b95a0a9fda4f86aed7870a5dfc135899e3925636f2.<br />
+Checksum SHA512 is ee7bd11c4f43ebbbe6500261c407ced2a7c9d888d8d6e30423bab96ba1876e10e4a1d1e65bbab13b0ad4c056cafce9fc72a65aaf3e12c39c2a769baa8d92298a.<br />
+Checksum RipeMD160 is f0cec284940581473f6753fa838aab50e49db232.<br />
+Checksum BLAKE2B is 623b5ce44103f3e98a99e9ff7158166a93e490f6c18237614116dcf1edf0f47cf1db8311a26bb710a961ef3245590fead83decca9193d71b62749881bc429b3e.<br />
+Calcul des cheksums du fichier : .\binMingw64CB\Release\dll_core.dll.<br />
+Checksum CRC32  is b9c4a78b.<br />
+Checksum MD5 is 61ca73800e2bf892aa3ed76dd832b863.<br />
+Checksum SHA256 is e86f2b843a5805d64689804b3b7e75e2b750b64d1737f0350c50e36120c4bbfb.<br />
+Checksum SHA512 is dd9ec3aa837c35ab77452bd9cfeb581d30714191bc8366851eabb7526556aa018c19d42b2e5e23b32e1f46b07d97339f9f7004869a15217a20f0e561f0bdb03b.<br />
+Checksum RipeMD160 is 1599fa30d357d97d1d005f115feb22ca866383cc.<br />
+Checksum BLAKE2B is c6e53c00b102fd1181a6bea7de3d80fd8d1019d89bf9d67ea2673f52189c06f45166af454f1dd211c1f6960c4ff086e3144a23ef2787e4e9008fcb954917860d.<br />
+Calcul des cheksums du fichier : .\binMSYS2W32\Debug\dll_core.dll.<br />
+Checksum CRC32  is 455d9cb2.<br />
+Checksum MD5 is 6c8f0e63b4083ffffda1dda91d017b64.<br />
+Checksum SHA256 is 956ff1ca06363fb154b3413cff350141aed35e57cb5c8a572540d6c1d89c1dd5.<br />
+Checksum SHA512 is 93e38e9218f1ca9b53ccdd66519a86bc326144ab926cc458ec0fdc221f68ccf9feaf5b97178a67fe65c79bfff04a350e2120f0d9ed9b5a1b0d04dda1e6174022.<br />
+Checksum RipeMD160 is 0b0948b4a09019ebf572a08c1d15bad76effb33c.<br />
+Checksum BLAKE2B is 2ba4bcd1ac3596cdf16443a76597699da09b843705693304f0e5a37698079bae4211de200f88c57aec0f8d57a3ea0d841896d87d2c6467680e8aee17cc04ba4d.<br />
+Calcul des cheksums du fichier : .\binMSYS2W32\Release\dll_core.dll.<br />
+Checksum CRC32  is aced905f.<br />
+Checksum MD5 is 8c8290aaf34c83ebba895322435731a8.<br />
+Checksum SHA256 is b93185b2ceb65c491407d01e1a8c924cf68c071dfc5da8dc8724d7cb4332c464.<br />
+Checksum SHA512 is 7ba71dcde5092865dcd2162faf65884cae8afefecafbffabb521c33d76f62b2c31cf46040c3cc23861f42ef907e37a7d1db3f8039eeea9ae6fb15b76f4ad1fb5.<br />
+Checksum RipeMD160 is 48309484ff3b0644b7af3fa107bc269303368f7b.<br />
+Checksum BLAKE2B is adf25c016f1b52b6caca622907073c0759c8335e9073de1482734d8a92b19242b624d1fbfa7c594dc22d2676bf9a63ac4ed1b543336803fec2942e32669464b0.<br />
+Calcul des cheksums du fichier : .\binMSYS2W64\Debug\dll_core.dll.<br />
+Checksum CRC32  is f48e6c38.<br />
+Checksum MD5 is 1213b636b507641a0d43a792ec727c19.<br />
+Checksum SHA256 is 0ec39c24ddc620718fad60c5909f3feb9d72d41aaa64015a1af3180fc048ac55.<br />
+Checksum SHA512 is bd678a0b814c38a0821c08ed31fc3dbc4ba0df88a8c919898cac89693b91fce55837ba1979872c2f19c083d41569167a3d9a1f23b7fc5e959116e7f42aae6a65.<br />
+Checksum RipeMD160 is a0c19cadb314d9a3565cd220372a1b4db700c7d0.<br />
+Checksum BLAKE2B is c6daec61e058033c524d12fd8642015ab5cbccbe565a8d75da3005897d0ea64d6f3c2a0874922f295f0b8ce1c65670a72ce85cba8e5aa0415e074d102f9b1585.<br />
+Calcul des cheksums du fichier : .\binMSYS2W64\Release\dll_core.dll.<br />
+Checksum CRC32  is aea39573.<br />
+Checksum MD5 is b183a01dd987ca9f3282cf528321bf65.<br />
+Checksum SHA256 is 8f5c770fe48a9795553557b36db48a9972e233f81c1b1852901696163d877ce9.<br />
+Checksum SHA512 is 80762c02253b1acf87f9caedacf9d3f3acbb7e4f19088d602f273811071a4f9894c65dfad66b4563bd77dc8741985cacb30951b3a45edee3242344a58a08ac04.<br />
+Checksum RipeMD160 is 599bd68aa16b99fc9b435b5a040cb6fd1f998a52.<br />
+Checksum BLAKE2B is 3c3267e187b75d2dedfc292c0ac31a377a0e933ece798566187ec724b96f0efae73e141e2de03758b7aa94efa91bb7c88514fbb441541b338063ccb08d8e462e.<br />
+Calcul des cheksums du fichier : .\binMSYS2U64\Debug\dll_core.dll.<br />
+Checksum CRC32  is 24883900.<br />
+Checksum MD5 is faa5d6f5fdbda16b9a37c138574a715d.<br />
+Checksum SHA256 is f82a44967ce6791714ce7279802d54e63923286095237e7370a7d3b1ec85d37b.<br />
+Checksum SHA512 is e91b0946c0039c83f37ff66a241935db2d13e0ca4efe45db1720eb94e489b6f4be6f584912c44fda5cda4fa23cb0a6f84fa30bdf4251bf002676dbf7fbddea0c.<br />
+Checksum RipeMD160 is da9ecbea86daa8dd167b62999a0c30891725dd41.<br />
+Checksum BLAKE2B is 083cde4df88d7892939e5ea8908792d0bff2cfa2f26f29ac3ff2ec0fa54d72c4a217af155a7dfeff148a9ac1671e05232f582956b8506a289e973fe5fc54fa79.<br />
+Calcul des cheksums du fichier : .\binMSYS2U64\Release\dll_core.dll.<br />
+Checksum CRC32  is c3f4d522.<br />
+Checksum MD5 is 9923cf73958c06a57ddc381b341d1a48.<br />
+Checksum SHA256 is f3dff031cb72828a777a1e579a6863ed944c7c0e818700438bf53a39dd0109b2.<br />
+Checksum SHA512 is 38e2ce8e5bcfb33ff4b90abce24c2c947080ab64d2d10a3887b81a5493152cbef08cd825168f396674e143564294924d73c30e0efc2d0d7eeb2740dc561ee89b.<br />
+Checksum RipeMD160 is a7b3cccbe995b4ea944d8ca2dd11b5a650c74f11.<br />
+Checksum BLAKE2B is cd639ad2f945d3c129a9be8a2213574ad64324ccf9e85a147ab1771b97be971d2639221d8bf6792ad2c97dd35e9a4291973ed57f83fa7152833d30e66a355f06.<br />
+Calcul des cheksums du fichier : .\binOW32\Debug\dll_core.dll.<br />
+Checksum CRC32  is 7c9d797f.<br />
+Checksum MD5 is fc20c26b3ccd1b42c025d94881b87bf5.<br />
+Checksum SHA256 is ff6ff04ce032e854929df6c51087604dd0456382fb0e2e5fb324233c1c603553.<br />
+Checksum SHA512 is 3a2a6a42184b495fb640b591c89b23e5a26e891d897376f5ba4f8a0808c89fb7264140bd2fe51be8cb57ecc654d2ab4873d14751f8d6f7992955cea6e435a65a.<br />
+Checksum RipeMD160 is e6e1ca8593eac60b648642ce93d0743a056faa3a.<br />
+Checksum BLAKE2B is 4a50f32b7cd91ceb3b55f174066e99410780c1465d0ca3afa1ffde0e20afa1397f096aec9dc58048f1ff76975dc1e3c5eeb0cf35ce285dbea31372619544ebef.<br />
+Calcul des cheksums du fichier : .\binOW32\Release\dll_core.dll.<br />
+Checksum CRC32  is b07fd3b4.<br />
+Checksum MD5 is e648ec42ceea23137d24dd272887dd7b.<br />
+Checksum SHA256 is 77f654fbcc7c9030f011abdfa04856ab3ef416d32b5e7022b4ad4c152618d3f0.<br />
+Checksum SHA512 is 7b43b6824be7bcdb3b19d0d8d21c54a5c91793fedd44e4f3df1b55aebfdb89ab827beb631f4f72d52f7a17f92bcbe767ff9aeaf6bebd53e1c3da9d11fe42bf5f.<br />
+Checksum RipeMD160 is 7c9d5e4ee71b74eebc4fcc365e57be301f877ce7.<br />
+Checksum BLAKE2B is 877cf8f0d054bf9dd0f18593fef6f7d003b074d4c848d8a88f05fe12e4fa2076939551f623681a1f87739faf7f36dd68038057c38a276d766bbbc7a40292d91a.<br />
+Calcul des cheksums du fichier : .\binOW64\Debug\dll_core.dll.<br />
+Checksum CRC32  is b3eadf7c.<br />
+Checksum MD5 is 1dcb212eec0522bf1c41b9df817d2c6e.<br />
+Checksum SHA256 is b23b2be7f34f334a61f386bd5c7695af2f699bdbea3dcf33430be3e49b0c0ae9.<br />
+Checksum SHA512 is 00eba085aa47a9c2380b1216c032965093f6d7b9887b683d6564789013d9abc8885117c7fdaff456e07c4703660a2efbfd1d060c26bf080ffa2b91daa3e2e564.<br />
+Checksum RipeMD160 is fab801119b3ecfa64dd25c02f9012191926b8028.<br />
+Checksum BLAKE2B is 13bd0a7cd8c4d1005725b2db1d9e4cf4db351544c5731abe685faa2dce6ed88862e93d4d5b63cc2b81a12610d51c1e7e28d113570e4ea7e7b8d3bc4e723a37f4.<br />
+Calcul des cheksums du fichier : .\binOW64\Release\dll_core.dll.<br />
+Checksum CRC32  is d5fa1ce0.<br />
+Checksum MD5 is 2179892ed25a8522b171d3ae4e7925b7.<br />
+Checksum SHA256 is 47d1fac5dbcedbf315b43c67bfb6f45d42cfaf1dee50f7f6bf750fad0280eb39.<br />
+Checksum SHA512 is f754779e79b2bbe864ed5aa43c9b920267af5c1acecc9a61a1f1a5ffef77a033b638246e83f60cbf4d7acc1511a0fa8ca5c482616e4dcb2c599e87b0ec5d4f60.<br />
+Checksum RipeMD160 is ed88b44a816613fab57f1f321cc4584061215bee.<br />
+Checksum BLAKE2B is 509b152965772f0aef9c3b418495691060be1d017897daccb1e044616b8b42c35fe398582ed06d03768fc1ecba1ca91fbe8e04ea486ecfb8aba699c0f63955f7.<br />
+Calcul des cheksums du fichier : .\binPELLESC32\Debug\dll_core.dll.<br />
+Checksum CRC32  is 77750f39.<br />
+Checksum MD5 is a0adc27726e11932d1113ac107f7b0cc.<br />
+Checksum SHA256 is 3eb80c36280b654dd0764b3a36df3a947819f4790360159bd649b73cb8069be7.<br />
+Checksum SHA512 is cc3a8df17215709b03239a41238b919c310d599a33e865d21448e2ca9535fde00b6593c65f3b6a9744959d6c08f8b22a7287818ba88d6cde049f5888df089202.<br />
+Checksum RipeMD160 is c75648e0e167d13e2a3883537588e78fe22adf24.<br />
+Checksum BLAKE2B is eb23dcf51e4ac467f8233368b105b6f3758d1a156fe0b7c957202ec28508c71d73bdb557e86d6f733a10b4cca4b2f62cb7a292a75e0f7efeb8ac5bff874bfc80.<br />
+Calcul des cheksums du fichier : .\binPELLESC32\Release\dll_core.dll.<br />
+Checksum CRC32  is 4101dbca.<br />
+Checksum MD5 is d496cb65d1c8b0d8e8df40a9e1b41700.<br />
+Checksum SHA256 is 34661be4051e2bc145b6177da119fc74aee176233b84469f9c3f9b6e335c6a31.<br />
+Checksum SHA512 is dab80af0cf87fa2fc7d4ca4781b8d4446a35d59b892e4df754187db1571799049ce5d9ffa713511e84de356eec05d396c3782e7b482e3dbe769924ed6642e5fa.<br />
+Checksum RipeMD160 is fcbb8e6fa51d0cb03a858b370f8bbd5655f2c52d.<br />
+Checksum BLAKE2B is 4f0ad60553cd91ceb6f7951b198f5a75e898fa3237cd79e55bacf9a5c3d4f02c5ff05fa6e11f70ee8230d7a32f2e3180f38d9734a65bc7f8ef68e4cd2be2c7e7.<br />
+Calcul des cheksums du fichier : .\binPELLESC64\Debug\dll_core.dll.<br />
+Checksum CRC32  is e36aa27e.<br />
+Checksum MD5 is 978dda917f960706d76671177ba5f4e7.<br />
+Checksum SHA256 is ec9118e8d54232750b8e66fd373b4110d70c9da8f57d863d76a0c9702a9ac5bb.<br />
+Checksum SHA512 is f486b05cd620332cca96a731a467ad0e76c40073267d4ab781b816af1a4cc9f291deec728907f1ad30ca6b1a5914788209186d7d10a108a2622437165435b50b.<br />
+Checksum RipeMD160 is 407409527c130b796c3a7874c0f661739989b8ea.<br />
+Checksum BLAKE2B is cd7d9f61f08a5e56b0517185ac00b2def477cff0959202e507314e54f6e1f2e0182ff33d76ddfc753cc14d8005a5fdc820908bf383d997b3eff4a1ba1e78f80e.<br />
+Calcul des cheksums du fichier : .\binPELLESC64\Release\dll_core.dll.<br />
+Checksum CRC32  is 923368eb.<br />
+Checksum MD5 is a890d5e007d3b7d72bfa1429b8f252f8.<br />
+Checksum SHA256 is 005333317d13033f36db0773b25022cb8ef6316b89f8336b7e569d9fc85f297c.<br />
+Checksum SHA512 is 69229f20c62b7ba1527cb4f8652feb05af63341d25af6f14a28258a4e8b340b95eec0dbc3082ae6bf7a305bb7eaee80a60e878d0a52553d24065dddfe274056b.<br />
+Checksum RipeMD160 is bf59d79806f99d19c5f83ee518c861188f289d5b.<br />
+Checksum BLAKE2B is 88c3ede1920f7583101b712d6153139c5283fb91f394b6f101229a643be4b408d00bfd0acaebe7f39830ecbe149f4d7555cf18ac344015b953b269b5bd78797e.<br />
+Calcul des cheksums du fichier : .\binTDMW32\Debug\dll_core.dll.<br />
+Checksum CRC32  is a5977476.<br />
+Checksum MD5 is 5e7fff0fd038f45a86a35afb85b2f19a.<br />
+Checksum SHA256 is 361f0e7be1f7cc1358647855cf6992ce4cd9fef1fc4796dc75c9b233130dc052.<br />
+Checksum SHA512 is 946d1653c9035e0020eaa72c287445495ffd07cab29318f19b186086f41657ab280f76d0c8952f255b37a9a15b3e1c19a43bcb0281e6b8a313f3adc400b733c0.<br />
+Checksum RipeMD160 is 88aa369c24167f62e78bc1d68e26defd595710ca.<br />
+Checksum BLAKE2B is b65df62183527344a0d62dfe87d4f082218cf51feb8938400ad6c300dc0f7161dd5ed05ca33a5b1b06cfb410ac9681e948a8435ff7395d4a163fbd5b6ba2a210.<br />
+Calcul des cheksums du fichier : .\binTDMW32\Release\dll_core.dll.<br />
+Checksum CRC32  is 59ef2a08.<br />
+Checksum MD5 is d44f89310b1cb75369d5d97f9eb11b3a.<br />
+Checksum SHA256 is 2ccc3eb4a49e8977c90970e006a5261b61aea3cddd3e7fc38b78c6d6410f4cfa.<br />
+Checksum SHA512 is 84e7ba55542b50b997b20fedda492704747b50974223b5140fa1f5d36adc7ccb2af970004c327f236646ac22fbd51de644e617d6ce5169fac55882c3a4bab8fd.<br />
+Checksum RipeMD160 is f26308953beeecf4c140d612680a1764e0144691.<br />
+Checksum BLAKE2B is 5cc6910b6a5697bbeeb07b0735f4699de3a25353b074fb53aff1cc66f776580514853051ac18c7ce9267639bfc103d107a5f0acf31af8a4cca167da385132d91.<br />
+Calcul des cheksums du fichier : .\binTDMW64\Debug\dll_core.dll.<br />
+Checksum CRC32  is c13ee16f.<br />
+Checksum MD5 is 5d3cf25baa930224fa24656fe0eeeeee.<br />
+Checksum SHA256 is 6c2e2e071c32d9f7c15debc13b2e75e291a70f2c2258d7e15604e392c6e93869.<br />
+Checksum SHA512 is 00d4feff77d7d4de920c403b907738e28ea00744aa4df2f61b9b4f67b205176567d6e154c8a5cec4882fa00e44f7bca13a5ec02bf3931d3fa42c14b39c3b307f.<br />
+Checksum RipeMD160 is ae49ad2081389601da02989f58e6170cc0a65e0e.<br />
+Checksum BLAKE2B is 91f5c14adc0c8ba74945676403c88b352c8a3f068d0ef7c7ddd70492d90bb983b5b406bbcbd62ed0dfaa8ab6b2e2c52827c436dddf64675cc0aede4e002aa9f2.<br />
+Calcul des cheksums du fichier : .\binTDMW64\Release\dll_core.dll.<br />
+Checksum CRC32  is 4825e08e.<br />
+Checksum MD5 is 07f5b903c2913bb010585e00cf85254d.<br />
+Checksum SHA256 is f4931b0def2818242e09875d8f45ef813098e5a34e8e4f1a38b83c3cb08e46bd.<br />
+Checksum SHA512 is b361ce5d8f4772d45df9cc3c45c8891ff40e10afc8c3fdd6b1ade0308b20e8d42b847e3306bfcc315165fb97bd43696c5feeda20a15f4a1302c747ed44d2cc9b.<br />
+Checksum RipeMD160 is ee12e8a98786c535235a48373aaa5aa0d82f2b82.<br />
+Checksum BLAKE2B is 23102e155f184132eac4931ed331a76b059b8631b7114edf3c9eac33fbcc626412bf213397e59372ea6ed3230630eb01bcd57b5c802c5f285b97795527f7d8b4.<br />
+Calcul des cheksums du fichier : .\binVS2022X32\Debug\dll_core.dll.<br />
+Checksum CRC32  is 4c8dab3f.<br />
+Checksum MD5 is f4d90911c7cbd1b479104f4897a21f44.<br />
+Checksum SHA256 is 896b6304aeb877c0fd7d7d2268e56f301fa9326f3fa793f6da0678835c8ee204.<br />
+Checksum SHA512 is e0afa10de7da812f183483e9e15a93f5c47acfb7041da1500e8f35a081a46ecde2214301ba05048112c1fb20116542068eb5064051a37132e830fcc1a9ac0e04.<br />
+Checksum RipeMD160 is 6848fa7724b85b82fea060972eb280189375f18b.<br />
+Checksum BLAKE2B is 1f4e90efeab14847a1f5a43827e87d49bcb7665d605a98b23dd236bbef82db9a4f7d84526644ec67f0f018f9b1aaedce5aca3e720503ec4c8c77dc69a904176b.<br />
+Calcul des cheksums du fichier : .\binVS2022X32\Release\dll_core.dll.<br />
+Checksum CRC32  is aa345344.<br />
+Checksum MD5 is 92d1d65cc2c98a64aeedf075cb14bd3e.<br />
+Checksum SHA256 is 4119f21f86198ebc2d0dc867086ba6b60ced73081d4be089faa9c983ded1fe1a.<br />
+Checksum SHA512 is fb29c482467d743bede6b28d9fda63fc2d983c3c0987c4d7df9acc6757640e7b9f96ec22eb0e62095a1078d9c5f176f8df7645c6ec89ced12a694d3b2b6e1608.<br />
+Checksum RipeMD160 is d0828c0e3051637d5c308630a9950207e8f7975d.<br />
+Checksum BLAKE2B is 2d4b5a70897fc094021b82d81fac29ea45b93b59a72089b55ad4f1bb3e94d6e41507faa43403999376096ef67fdb29f1722d183ff22d49f505a4cfa34a13e35c.<br />
+Calcul des cheksums du fichier : .\binVS2022X64\Debug\dll_core.dll.<br />
+Checksum CRC32  is c75bcbca.<br />
+Checksum MD5 is 721d932bf0f33f380453f8a9aafe91dd.<br />
+Checksum SHA256 is 5d0e1b033d5beb1b51d21e266243054d310fd022b49e9119f046199dba451cd2.<br />
+Checksum SHA512 is a5cf6266e56e0861412631efb8978120ec7dc7776df7f8e21dab2649a6488bd3b82ea355ec210280cc7a674354fdd75160a991e56bcab58001330796fe580366.<br />
+Checksum RipeMD160 is 9ed85304b3a7eb8fb7a4694b8ad71068304b9c64.<br />
+Checksum BLAKE2B is a2ac2571a026acef4ec4446321451da7d531a626805d8f2724922666d9ebcda770bcc267568bf6c7c8cd0624fb9c33124ac5ddd88588f0e635e957e7754557ed.<br />
+Calcul des cheksums du fichier : .\binVS2022X64\Release\dll_core.dll.<br />
+Checksum CRC32  is 44087eec.<br />
+Checksum MD5 is f6e22b468a0aa794a677346f1a43e5ec.<br />
+Checksum SHA256 is a22e337cd1e228358e0a996054533aa9054aa02efa19c5e318de3212ad242b51.<br />
+Checksum SHA512 is 2e137898392eb9f399f0cd830d05076496dc2a7e4190a9ade084e209244e2cad1b4ae0d9b3c93f630ef8d4f467f8320affa141cee5a66850373511bdb30dd182.<br />
+Checksum RipeMD160 is c1d6073a3077f109ef47abe00337fb56ac505536.<br />
+Checksum BLAKE2B is c9d87c3991d04366992dce4956f4d68e16be2ed6b63eecb909b31adad7ecf19b8d72e624f77b5872a364ce0cf1ad280b8971c5111f1910ee58a9da0b5e7a06c4.<br />
+C:\Program Files\7-Zip\7z a BUILD_DLL_2024-01-17_src.7z src\*.* res\*.* data\*.* build.cmake\*  build.batch\*  *.bat *.txt *.html *.md doxygen\* doc\* *.cbp *.workspace -x!*.bak README makefile -mhe -p"BUILD_DLL_tde@03!"<br />
+7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20<br />
+Scanning the drive:<br />
+49 folders, 90 files, 1608661 bytes (1571 KiB)<br />
+Creating archive: BUILD_DLL_2024-01-17_src.7z<br />
+Add new data to archive: 49 folders, 90 files, 1608661 bytes (1571 KiB)<br />
+Files read from disk: 90<br />
+Archive size: 111696 bytes (110 KiB)<br />
+Everything is Ok<br />
+C:\Program Files\7-Zip\7z a -ttar BUILD_DLL_2024-01-17_all.tar * -x!*.7z -x!*.bak<br />
+7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20<br />
+Scanning the drive:<br />
+281 folders, 934 files, 106380476 bytes (102 MiB)<br />
+Creating archive: BUILD_DLL_2024-01-17_all.tar<br />
+Add new data to archive: 281 folders, 934 files, 106380476 bytes (102 MiB)<br />
+Files read from disk: 1215<br />
+Archive size: 107278336 bytes (103 MiB)<br />
+Everything is Ok<br />
+C:\Program Files\7-Zip\7z a BUILD_DLL_2024-01-17_all.7z *.tar -mhe -p"BUILD_DLL_tde@03!"<br />
+7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20<br />
+Scanning the drive:<br />
+1 file, 107278336 bytes (103 MiB)<br />
+Creating archive: BUILD_DLL_2024-01-17_all.7z<br />
+Add new data to archive: 1 file, 107278336 bytes (103 MiB)<br />
+Files read from disk: 1<br />
+Archive size: 8677891 bytes (8475 KiB)<br />
+Everything is Ok<br />
+cmd /c del *.tar<br />
+<font color="#0000ff">Process terminated with status 0 (1 minute(s), 12 second(s))</font><br />
+<font color="#0000ff">0 error(s), 4 warning(s) (1 minute(s), 12 second(s))</font><br />
+</tt>
+</body>
+</html>

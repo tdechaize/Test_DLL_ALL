@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1704032789 source:c:\src\testdll_all\src\dll_core.c
+	<windows.h>
+	<stdio.h>
+	"dll_share.h"
+
+1704032868 c:\src\testdll_all\src\dll_share.h
+

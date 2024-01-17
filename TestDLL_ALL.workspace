@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="TestDLL_ALL.Workspace">
+		<Project filename="BUILD_DLL.cbp" />
+		<Project filename="Testdll_implicit.cbp" />
+		<Project filename="Testdll_explicit.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>
